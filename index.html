@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEFLOCK NWA — Automated License Plate Reader Surveillance Tracker</title>
+  <meta name="description" content="Tracking and exposing the automated license plate reader (ALPR) surveillance network operated by Flock Safety across Northwest Arkansas — Benton and Washington counties. No public vote. No warrant required. Know your rights.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="DEFLOCK NWA — ALPR Surveillance Tracker">
+  <meta property="og:description" content="120+ Flock Safety cameras track every vehicle across NWA with zero public referendum. Explore the map, file FOIA requests, and take action.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DEFLOCK NWA — ALPR Surveillance Tracker">
+  <meta name="twitter:description" content="Automated mass surveillance across Northwest Arkansas. No public vote. No warrant.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            surface: {
+              DEFAULT: '#09090b',
+              raised: '#0a0a0c',
+              overlay: '#18181b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body class="bg-[#09090b] text-neutral-100 font-sans antialiased">
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SYSTEM BAR
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="border-b border-neutral-800 bg-[#09090b]/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+      <!-- System status row -->
+      <div class="flex items-center justify-between py-2 border-b border-neutral-800/50">
+        <div class="status-pill">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>STATUS: REGIONAL SURVEILLANCE ACTIVE</span>
+        </div>
+        <span id="system-clock" class="font-mono text-[0.65rem] tracking-wider text-neutral-500 hidden sm:block"></span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex items-center justify-between h-12" aria-label="Primary navigation">
+        <a href="#" class="font-mono text-sm font-bold tracking-[0.12em] text-neutral-100 uppercase whitespace-nowrap">
+          DEFLOCK NWA <span class="text-neutral-500 font-normal hidden sm:inline">// WATCHLIST</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-6 font-mono text-[0.7rem] tracking-wider uppercase">
+          <a href="#scope" class="nav-link">Scope</a>
+          <a href="#map" class="nav-link">Map</a>
+          <a href="#analysis" class="nav-link">Analysis</a>
+          <a href="#foia" class="nav-link">FOIA</a>
+          <a href="#action" class="nav-link">Action</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="nav-toggle" class="md:hidden p-2 text-neutral-400 hover:text-neutral-100 transition-colors" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="nav-menu" class="hidden md:hidden border-t border-neutral-800 py-3 space-y-2 font-mono text-xs tracking-wider uppercase">
+        <a href="#scope" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Scope</a>
+        <a href="#map" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Map</a>
+        <a href="#analysis" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Analysis</a>
+        <a href="#foia" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">FOIA</a>
+        <a href="#action" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Action</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="scanline-bg relative border-b border-neutral-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative z-10">
+        <div class="max-w-3xl">
+          <div class="alert-badge mb-6">
+            <span style="width:5px;height:5px;border-radius:50%;background:#ef4444;box-shadow:0 0 4px rgba(239,68,68,0.6);" aria-hidden="true"></span>
+            SURVEILLANCE ALERT — NWA REGION
+          </div>
+
+          <h1 class="font-mono text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-neutral-100">
+            Automated Mass Surveillance Across Northwest&nbsp;Arkansas.
+          </h1>
+
+          <p class="mt-6 text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Flock Safety's automated license plate recognition (ALPR) cameras silently photograph
+            and log every vehicle crossing through Fayetteville, Springdale, Rogers, Bentonville,
+            and surrounding municipalities — capturing your license plate, vehicle make, model, color,
+            and identifying features on every trip. No public referendum was held. No individualized
+            warrants are required. Washington County's Quorum Court voted to bar county funds
+            from ALPR systems, but municipal deployments continue to expand unchecked across
+            both counties.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="#map" class="btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7 11.5 7.3 11.8a1 1 0 0 0 1.4 0C13 21.5 20 15.4 20 10a8 8 0 0 0-8-8z"/></svg>
+              Explore The Map
+            </a>
+            <a href="#foia" class="btn-outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              File A FOIA Request
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         REGIONAL SCOPE — METRIC CARDS
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="scope" class="border-b border-neutral-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+        <div class="section-label">Regional Scope — Benton &amp; Washington Counties</div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-800">
+          <div class="metric-card">
+            <div class="metric-value">120+</div>
+            <div class="metric-label">Estimated ALPR Units Mapped</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">30 Days</div>
+            <div class="metric-label">Searchable Cloud Retention</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">Active</div>
+            <div class="metric-label">Nationwide Cross-Jurisdiction Sharing</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value text-red-500">0</div>
+            <div class="metric-label">Public Referendums Held</div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-neutral-500 text-xs font-mono leading-relaxed max-w-3xl">
+          Data compiled from community field observations, Benton County Sheriff's Office public records disclosures,
+          Rogers PD procurement filings, Fayetteville public meeting minutes, and statewide FOIA responses.
+          Camera counts are estimated and updated as new data becomes available. Contribute verified locations at
+          <a href="https://deflock.org" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:text-emerald-400 transition-colors">deflock.org</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SURVEILLANCE MAP
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="map-section" class="border-b border-neutral-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+          <div>
+            <div class="section-label">Live Surveillance Map</div>
+            <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100">
+              Known ALPR Camera Locations
+            </h2>
+          </div>
+          <a href="https://deflock.org" target="_blank" rel="noopener noreferrer"
+             class="font-mono text-xs tracking-wider text-emerald-500 hover:text-emerald-400 transition-colors uppercase whitespace-nowrap">
+            Submit Data →
+          </a>
+        </div>
+        <div id="map" role="application" aria-label="Interactive map of known ALPR camera locations across Northwest Arkansas"></div>
+        <p class="mt-4 text-neutral-600 text-[0.65rem] font-mono">
+          Markers represent approximate locations based on community data collection and public records.
+          Click a marker for camera details. Red dots = confirmed active units.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TECHNICAL DOSSIER — WHAT GETS LOGGED
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="analysis" class="border-b border-neutral-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+        <div class="section-label">Technical Dossier</div>
+        <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100 mb-2">
+          What Gets Logged Every Time You Drive Past
+        </h2>
+        <p class="text-neutral-400 text-sm leading-relaxed mb-10 max-w-2xl">
+          Each Flock Safety Falcon camera captures and transmits the following data to cloud storage
+          accessible by subscribing law enforcement agencies — with no warrant, probable cause, or
+          judicial oversight required for queries.
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Left: What's Captured -->
+          <div class="border border-neutral-800 bg-[#0a0a0c] p-6">
+            <h3 class="font-mono text-xs tracking-[0.14em] uppercase text-neutral-400 mb-4 pb-3 border-b border-neutral-800">
+              Vehicle Capture Data Points
+            </h3>
+
+            <div class="data-field">
+              <div class="data-field-icon"></div>
+              <div>
+                <span class="text-neutral-200 text-sm font-medium">License Plate OCR</span>
+                <p class="text-neutral-500 text-xs mt-0.5">Optical character recognition extracts plate number, state of issuance, and plate type classification.</p>
+              </div>
+            </div>
+
+            <div class="data-field">
+              <div class="data-field-icon"></div>
+              <div>
+                <span class="text-neutral-200 text-sm font-medium">Vehicle Identification</span>
+                <p class="text-neutral-500 text-xs mt-0.5">Make, model, generation, body type, and color — matched against a vehicle fingerprint database.</p>
+              </div>
+            </div>
+
+            <div class="data-field">
+              <div class="data-field-icon"></div>
+              <div>
+                <span class="text-neutral-200 text-sm font-medium">Distinguishing Features</span>
+                <p class="text-neutral-500 text-xs mt-0.5">Bumper stickers, roof racks, trailer hitches, dents, aftermarket modifications — logged as "Vehicle Fingerprint" attributes for re-identification even without a readable plate.</p>
+              </div>
+            </div>
+
+            <div class="data-field">
+              <div class="data-field-icon"></div>
+              <div>
+                <span class="text-neutral-200 text-sm font-medium">Timestamp &amp; Travel Direction</span>
+                <p class="text-neutral-500 text-xs mt-0.5">GPS-synced timestamp, travel direction (N/S/E/W), and lane position for movement pattern analysis.</p>
+              </div>
+            </div>
+
+            <div class="data-field">
+              <div class="data-field-icon"></div>
+              <div>
+                <span class="text-neutral-200 text-sm font-medium">Contextual Image Capture</span>
+                <p class="text-neutral-500 text-xs mt-0.5">Full-frame photograph of the vehicle, occupant silhouettes, and surrounding traffic — retained alongside metadata.</p>
+              </div>
+            </div>
+
+            <div class="data-field">
+              <div class="data-field-icon"></div>
+              <div>
+                <span class="text-neutral-200 text-sm font-medium">Wireless Network Sniffing</span>
+                <p class="text-neutral-500 text-xs mt-0.5">Some Flock units detect Bluetooth and WiFi probe requests from in-vehicle and passenger devices, creating an additional device-level tracking vector.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Privacy Analysis -->
+          <div class="border border-neutral-800 bg-[#0a0a0c] p-6">
+            <h3 class="font-mono text-xs tracking-[0.14em] uppercase text-neutral-400 mb-4 pb-3 border-b border-neutral-800">
+              Constitutional &amp; Oversight Concerns
+            </h3>
+
+            <div class="space-y-6 text-sm leading-relaxed">
+              <div>
+                <h4 class="text-neutral-200 font-semibold mb-1">Fourth Amendment Search Protections</h4>
+                <p class="text-neutral-400">
+                  The Supreme Court ruled in <em>Carpenter v. United States</em> (2018) that prolonged tracking
+                  of an individual's movements constitutes a Fourth Amendment search. ALPR networks that
+                  aggregate location data over time may meet this threshold — yet no Arkansas municipality
+                  has enacted warrant requirements for ALPR queries. Officers query plates without
+                  individualized suspicion on a routine basis.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-neutral-200 font-semibold mb-1">Cross-Jurisdiction &amp; Out-of-State Access</h4>
+                <p class="text-neutral-400">
+                  Flock Safety's platform enables nationwide agency-to-agency data sharing. A plate scanned
+                  in Rogers, Arkansas can be queried by a department in Virginia, Texas, or California.
+                  There is no statutory framework in Arkansas governing which out-of-state agencies can
+                  access NWA plate data or for what investigative purpose.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-neutral-200 font-semibold mb-1">Absence of Municipal Oversight</h4>
+                <p class="text-neutral-400">
+                  No NWA municipality has established a civilian oversight board, mandatory audit schedule,
+                  or public reporting requirement for ALPR deployments. Procurement decisions are typically
+                  made by police departments through operational budgets, bypassing city council approval
+                  and public comment entirely.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-neutral-200 font-semibold mb-1">Data Retention Without Consent</h4>
+                <p class="text-neutral-400">
+                  The standard Flock Safety data retention window is 30 days, but agencies can negotiate
+                  longer retention periods. During this window, the complete travel history of every vehicle
+                  that passes a camera is searchable — regardless of whether the vehicle or its owner
+                  is under investigation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOIA GENERATOR
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="foia" class="border-b border-neutral-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+        <div class="section-label">FOIA Generator</div>
+        <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100 mb-2">
+          Arkansas Public Records Request Template
+        </h2>
+        <p class="text-neutral-400 text-sm leading-relaxed mb-8 max-w-2xl">
+          Under the Arkansas Freedom of Information Act (A.C.A. § 25-19-101 et seq.), every citizen has the right
+          to inspect and copy public records. Select a target agency below, review the pre-filled request,
+          and copy it to your clipboard.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+          <div class="flex-1">
+            <label for="foia-target" class="block font-mono text-[0.65rem] tracking-wider uppercase text-neutral-500 mb-2">
+              Target Agency
+            </label>
+            <select id="foia-target" class="foia-select w-full">
+              <option value="City of Rogers">City of Rogers</option>
+              <option value="City of Fayetteville">City of Fayetteville</option>
+              <option value="City of Bentonville">City of Bentonville</option>
+              <option value="Benton County Sheriff's Office">Benton County Sheriff's Office</option>
+              <option value="City of Springdale">City of Springdale</option>
+              <option value="Washington County Sheriff's Office">Washington County Sheriff's Office</option>
+            </select>
+          </div>
+        </div>
+
+        <textarea id="foia-text" class="foia-textarea" rows="20" readonly aria-label="FOIA request text"></textarea>
+
+        <div class="mt-4 flex flex-wrap gap-3">
+          <button id="foia-copy" class="btn-primary copy-btn" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy to Clipboard
+            <span class="copy-feedback">✓ COPIED</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CITIZEN ACTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="action" class="border-b border-neutral-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+        <div class="section-label">Take Action</div>
+        <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100 mb-2">
+          Contact Your Representatives
+        </h2>
+        <p class="text-neutral-400 text-sm leading-relaxed mb-10 max-w-2xl">
+          Attend public meetings. Submit public comments. Demand transparency and civilian oversight
+          before ALPR networks are expanded further.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-800 mb-12">
+
+          <div class="contact-card">
+            <h3 class="font-mono text-xs tracking-wider uppercase text-emerald-500 mb-3">Fayetteville City Council</h3>
+            <p class="text-neutral-400 text-sm mb-2">Meets 1st &amp; 3rd Tuesday of each month at 5:30 PM</p>
+            <p class="text-neutral-500 text-xs">113 W Mountain St, Fayetteville, AR 72701</p>
+            <p class="text-neutral-500 text-xs mt-1">Public comment: Sign up at the meeting or submit written comments to the City Clerk's office prior to the session.</p>
+          </div>
+
+          <div class="contact-card">
+            <h3 class="font-mono text-xs tracking-wider uppercase text-emerald-500 mb-3">Rogers City Council</h3>
+            <p class="text-neutral-400 text-sm mb-2">Meets 2nd &amp; 4th Tuesday of each month at 6:30 PM</p>
+            <p class="text-neutral-500 text-xs">301 W Chestnut St, Rogers, AR 72756</p>
+            <p class="text-neutral-500 text-xs mt-1">Public comment period available at the beginning of each regular meeting.</p>
+          </div>
+
+          <div class="contact-card">
+            <h3 class="font-mono text-xs tracking-wider uppercase text-emerald-500 mb-3">Bentonville City Council</h3>
+            <p class="text-neutral-400 text-sm mb-2">Meets 2nd &amp; 4th Tuesday of each month at 6:00 PM</p>
+            <p class="text-neutral-500 text-xs">117 W Central Ave, Bentonville, AR 72712</p>
+            <p class="text-neutral-500 text-xs mt-1">Public comment: Citizens may address the council during the designated comment period.</p>
+          </div>
+
+          <div class="contact-card">
+            <h3 class="font-mono text-xs tracking-wider uppercase text-emerald-500 mb-3">Springdale City Council</h3>
+            <p class="text-neutral-400 text-sm mb-2">Meets 2nd &amp; 4th Tuesday of each month at 6:00 PM</p>
+            <p class="text-neutral-500 text-xs">201 Spring St, Springdale, AR 72764</p>
+            <p class="text-neutral-500 text-xs mt-1">Public comment period at the beginning of regular sessions.</p>
+          </div>
+
+          <div class="contact-card">
+            <h3 class="font-mono text-xs tracking-wider uppercase text-emerald-500 mb-3">Benton County Quorum Court</h3>
+            <p class="text-neutral-400 text-sm mb-2">Meets 1st Thursday of each month</p>
+            <p class="text-neutral-500 text-xs">215 E Central Ave, Suite 217, Bentonville, AR 72712</p>
+            <p class="text-neutral-500 text-xs mt-1">Contact the County Judge's office to be placed on the agenda.</p>
+          </div>
+
+          <div class="contact-card">
+            <h3 class="font-mono text-xs tracking-wider uppercase text-emerald-500 mb-3">Washington County Quorum Court</h3>
+            <p class="text-neutral-400 text-sm mb-2">Meets 3rd Thursday of each month at 6:00 PM</p>
+            <p class="text-neutral-500 text-xs">280 N College Ave, Suite 300, Fayetteville, AR 72701</p>
+            <p class="text-neutral-500 text-xs mt-1">Voted to bar county funds from ALPR purchases. Attend to support enforcement.</p>
+          </div>
+        </div>
+
+        <!-- Newsletter Alert Signup -->
+        <div class="border border-neutral-800 bg-[#0a0a0c] p-6 max-w-lg">
+          <h3 class="font-mono text-xs tracking-[0.14em] uppercase text-neutral-400 mb-1">
+            Surveillance Alerts
+          </h3>
+          <p class="text-neutral-500 text-xs mb-4">
+            Get notified when new cameras are discovered, FOIA responses are published, or council votes are scheduled.
+          </p>
+          <form id="alert-form" class="flex gap-2">
+            <input
+              id="alert-email"
+              type="email"
+              class="email-input flex-1"
+              placeholder="your@email.address"
+              required
+              aria-label="Email address for surveillance alerts"
+            >
+            <button type="submit" class="btn-primary whitespace-nowrap">Subscribe</button>
+          </form>
+          <p id="alert-feedback" class="mt-2 font-mono text-xs" style="display:none;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="border-t border-neutral-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div>
+          <p class="font-mono text-xs tracking-wider uppercase text-neutral-500 mb-3">DEFLOCK NWA</p>
+          <p class="text-neutral-600 text-xs leading-relaxed">
+            Open-source surveillance accountability project. Not affiliated with any law enforcement agency.
+            All data sourced from public records, community observations, and FOIA responses.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-mono text-xs tracking-wider uppercase text-neutral-500 mb-3">Privacy Guarantee</p>
+          <p class="text-neutral-600 text-xs leading-relaxed">
+            This site does not use analytics cookies, tracking pixels, fingerprinting, or any third-party data collection.
+            No user data is stored, transmitted, or sold. The irony of a surveillance tracker that tracks its
+            visitors is not lost on us.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-mono text-xs tracking-wider uppercase text-neutral-500 mb-3">Resources</p>
+          <ul class="space-y-1.5">
+            <li><a href="https://atlasofsurveillance.org/" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">EFF Atlas of Surveillance</a></li>
+            <li><a href="https://www.acluarkansas.org/" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">ACLU of Arkansas</a></li>
+            <li><a href="https://deflock.org" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">DeFlock.org — National ALPR Map</a></li>
+            <li><a href="https://www.eff.org/pages/automated-license-plate-readers-alpr" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">EFF — ALPR Explained</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="section-divider my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="font-mono text-[0.6rem] tracking-wider text-neutral-700 uppercase">
+          No copyright claimed. Public domain. Fork, remix, deploy.
+        </p>
+        <p class="font-mono text-[0.6rem] tracking-wider text-neutral-700">
+          Built with zero tracking. Zero analytics. Zero compromise.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="assets/js/map-data.js"></script>
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>
