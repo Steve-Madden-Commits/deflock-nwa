@@ -76,7 +76,7 @@ const NWA_ALPR_MARKERS = [
     location: "I-49 Corridor, Lowell",
     corridor: "Interstate 49 Southbound",
     status: "active",
-    notes: "Interstate surveillance — captures all southbound I-49 traffic"
+    notes: "Interstate surveillance, captures all southbound I-49 traffic"
   },
   {
     id: "NWA-007",
@@ -100,7 +100,7 @@ const NWA_ALPR_MARKERS = [
     location: "Highway 102 & Centerton Blvd, Centerton",
     corridor: "Highway 102 Corridor",
     status: "active",
-    notes: "Rapidly growing suburb — recently deployed"
+    notes: "Rapidly growing suburb, recently deployed"
   },
   {
     id: "NWA-009",
@@ -124,6 +124,6 @@ const NWA_ALPR_MARKERS = [
     location: "Wedington Dr & I-49, Fayetteville",
     corridor: "I-49 / Wedington Interchange",
     status: "active",
-    notes: "Major interstate interchange — high daily volume"
+    notes: "Major interstate interchange, high daily volume"
   }
 ];

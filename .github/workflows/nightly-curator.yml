@@ -1,0 +1,38 @@
+name: Nightly News Curator & Ranker
+
+on:
+  schedule:
+    # Runs every morning at 06:00 UTC (1:00 AM CST)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allows manual one-click trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  curate-and-rank:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run News Ingestion & Importance Scorer
+        run: python scripts/curate_news.py
+
+      - name: Commit and Push if Updated
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/news.json
+          if ! git diff --cached --quiet; then
+            git commit -m "[Automated] Nightly news & intelligence sync [skip ci]"
+            git push
+          else
+            echo "No new high-scoring news stories detected. data/news.json is up to date."
+          fi

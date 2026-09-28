@@ -1,0 +1,168 @@
+[
+  {
+    "type": "win",
+    "scope": "local",
+    "headline": "Pea Ridge Police Department Discontinues Flock Safety License Plate Reader Program",
+    "excerpt": "After community feedback on privacy and public trust, Pea Ridge PD announced it would end its Flock Safety contract — joining Centerton, Farmington, and other NWA cities that have walked away from the system.",
+    "source": "5NEWS / KUAF Public Radio",
+    "date": "Jul 2026",
+    "url": "https://www.5newsonline.com/article/news/local/pea-ridge-police-discontinues-flock-safety-license-plate-reader-program/527-e9bb35de-efee-4239-9594-5a780db5060a",
+    "score": 100,
+    "pinned": true
+  },
+  {
+    "type": "win",
+    "scope": "local",
+    "headline": "Washington County Quorum Court Votes 13–2 to Ban ALPR Spending",
+    "excerpt": "On September 17, 2026, the Washington County Quorum Court passed an ordinance prohibiting county funds from being spent on automated license plate reader systems like Flock Safety, citing privacy risks and surveillance concerns.",
+    "source": "Conduit News / 5NEWS",
+    "date": "Sep 2026",
+    "url": "https://conduitnews.com/2026/09/17/washington-county-quorum-court-bans-use-of-county-funds-for-license-plate-readers/",
+    "score": 95,
+    "pinned": true
+  },
+  {
+    "type": "win",
+    "scope": "local",
+    "headline": "Centerton City Council Unanimously Votes to Terminate Flock Safety Contract",
+    "excerpt": "The Centerton City Council voted unanimously on August 11, 2026 to end its Flock Safety agreement after residents raised sustained concerns about data privacy, access controls, and the lack of local oversight.",
+    "source": "Delta-Plex News",
+    "date": "Aug 2026",
+    "url": "https://deltaplexnews.com/2026/08/centerton-city-council-votes-to-terminate-flock-safety-contract/",
+    "score": 90,
+    "pinned": true
+  },
+  {
+    "type": "win",
+    "scope": "local",
+    "headline": "Farmington PD Lets Flock Safety Contract Expire, Citing False Alerts and Reduced Data Access",
+    "excerpt": "The Farmington Police Department did not renew its Flock Safety contract after it expired August 10, 2026 — citing technical issues including false stolen-plate alerts and Flock cutting the department's data window from 30 days to just 7.",
+    "source": "NWA Report",
+    "date": "Aug 2026",
+    "url": "https://neareport.com/2026/08/farmington-police-flock-safety-contract-not-renewed/",
+    "score": 90,
+    "pinned": true
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "Texas Sheriff Used 83,000 Flock Cameras to Track Woman Suspected of Self-Managing an Abortion",
+    "excerpt": "EFF reporting confirmed Johnson County, TX deputies queried Flock's nationwide ALPR network specifically noting 'had an abortion, search for female' — directly contradicting the department's claim it was a welfare check.",
+    "source": "Electronic Frontier Foundation",
+    "date": "May 2025",
+    "url": "https://www.eff.org/deeplinks/2025/05/she-got-abortion-so-texas-cop-used-83000-cameras-track-her-down",
+    "score": 95,
+    "pinned": true
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "Flock Safety and Texas Sheriff Lied: Abortion Search Was Not a Missing Person Case",
+    "excerpt": "Follow-up EFF investigation using court documents proved that both Flock Safety and the Johnson County Sheriff's Office misrepresented the 2025 abortion-related ALPR search as a 'missing person' case when internal logs said otherwise.",
+    "source": "Electronic Frontier Foundation",
+    "date": "Oct 2025",
+    "url": "https://www.eff.org/deeplinks/2025/10/flock-safety-and-texas-sheriff-claimed-license-plate-search-was-missing-person-it-was",
+    "score": 92,
+    "pinned": true
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "At Least 100 Police Officers Disciplined, Charged, or Fired for Misusing Flock ALPR Systems",
+    "excerpt": "The Washington Post and Institute for Justice documented over 100 law enforcement personnel accused of misusing Flock cameras for personal stalking — often of romantic interests — with many departments lacking any proactive audit systems.",
+    "source": "The Washington Post / Institute for Justice",
+    "date": "Aug–Sep 2026",
+    "url": "https://www.washingtonpost.com/technology/2026/08/flock-safety-police-stalking-license-plate/",
+    "score": 88
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "Five Albany, Georgia Officers Fired and Arrested for Using Flock for Personal Surveillance",
+    "excerpt": "A Flock Safety internal audit revealed five Albany PD officers had used the ALPR system for non-law enforcement purposes. All five were terminated and arrested; the Georgia Bureau of Investigation took over the cases.",
+    "source": "CBS News",
+    "date": "Jul 2026",
+    "url": "https://www.cbsnews.com/news/georgia-officers-arrested-flock-safety-license-plate-misuse/",
+    "score": 85
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "Five Indianapolis Officers Criminally Charged for Misusing Flock Cameras to Stalk Women",
+    "excerpt": "Indianapolis IMPD officer Jonathan Schultz faced 26 criminal charges — including stalking — after conducting 1,396 unauthorized Flock searches on women he met off-duty. Four other officers were also charged or forced out.",
+    "source": "Gizmodo / Newsweek",
+    "date": "Sep 2026",
+    "url": "https://gizmodo.com/five-indianapolis-cops-charged-with-misusing-flock-cameras-including-one-case-of-stalking/",
+    "score": 85
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "ACLU: Flock Safety's Network Is Being Used by ICE for Immigration Enforcement",
+    "excerpt": "ACLU research and audit logs from Denver and other cities confirmed that ICE accessed Flock's national data-sharing portal to track vehicles for deportation operations — often without the knowledge of local departments whose data was queried.",
+    "source": "ACLU",
+    "date": "2025–2026",
+    "url": "https://www.aclu.org/fighting-creepy-alpr-cameras",
+    "score": 84
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "Florida Woman Jailed 13 Days After Flock Camera Misidentified Her Vehicle in Fatal Hit-and-Run",
+    "excerpt": "Lindsey Isaacs spent 13 days in jail — including 86 hours in isolation — after Florida Highway Patrol relied on a Flock ALPR hit that misidentified her black SUV as the maroon Durango involved in a triple-fatal crash. She later testified before the U.S. Senate.",
+    "source": "FOX 13 Tampa Bay",
+    "date": "Oct 2025",
+    "url": "https://www.fox13news.com/news/florida-woman-wrongfully-jailed-flock-safety-license-plate-hit-run",
+    "score": 83
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "Senate Hearing 'Always Watching' Puts Flock Safety's Nationwide AI Surveillance Under Federal Scrutiny",
+    "excerpt": "The U.S. Senate Judiciary Subcommittee on Crime and Counterterrorism held a September 2026 hearing into Flock's 120,000-camera network, with ACLU testimony and wrongful-arrest victims describing a system with no meaningful federal oversight.",
+    "source": "U.S. Senate Judiciary Committee",
+    "date": "Sep 2026",
+    "url": "https://www.judiciary.senate.gov/committee-activity/hearings/always-watching-flocks-nationwide-ai-surveillance-network",
+    "score": 82
+  },
+  {
+    "type": "flag",
+    "scope": "local",
+    "headline": "Rogers PD ALPR Query Logs Show Hundreds of Searches With No Case Reference",
+    "excerpt": "FOIA responses obtained by community researchers revealed Rogers Police Department officers ran hundreds of Flock Safety plate queries over a six-month period with no associated incident number or documented investigative purpose.",
+    "source": "DEFLOCK NWA / FOIA Records",
+    "date": "2024",
+    "url": "#foia",
+    "score": 80
+  },
+  {
+    "type": "win",
+    "scope": "national",
+    "headline": "Maine's 21-Day ALPR Retention Limit Remains the Strictest Protective Law in the Nation",
+    "excerpt": "Maine's statute (29-A M.R.S. § 2117-A) mandates deletion of non-investigative plate data within 21 days and bans all private ALPR use — the only law of its kind in the U.S., and a model advocates are pushing other states to adopt.",
+    "source": "Maine Legislature / ACLU of Maine",
+    "date": "2009 / ongoing",
+    "url": "https://www.aclumaine.org/en/legislation/sb-3-act-protect-maine-citizens-use-automated-license-plate-readers",
+    "score": 78
+  },
+  {
+    "type": "win",
+    "scope": "national",
+    "headline": "Institute for Justice Launches ALPR Abuse Tracker: 140+ Documented Incidents Nationwide",
+    "excerpt": "The Institute for Justice published a searchable database of over 140 confirmed ALPR abuse cases by law enforcement, including romantic stalking, wrongful stops, and unauthorized personal surveillance — most discovered only through victim reports rather than internal audits.",
+    "source": "Institute for Justice",
+    "date": "Aug 2026",
+    "url": "https://ij.org/issues/privacy/plate-privacy/",
+    "score": 78
+  },
+  {
+    "type": "flag",
+    "scope": "national",
+    "headline": "ACLU Campaign: Flock's Network Tracks Where You Pray, Protest, and Seek Medical Care",
+    "excerpt": "The ACLU's national campaign against ALPR 'creep' documents how Flock's vehicle-journey maps can reveal attendance at mosques, abortion providers, union halls, and political protests — with no warrant requirement at any point.",
+    "source": "ACLU",
+    "date": "2025–2026",
+    "url": "https://www.aclu.org/fighting-creepy-alpr-cameras",
+    "score": 75
+  }
+]

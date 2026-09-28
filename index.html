@@ -3,15 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DEFLOCK NWA — Automated License Plate Reader Surveillance Tracker</title>
-  <meta name="description" content="Tracking and exposing the automated license plate reader (ALPR) surveillance network operated by Flock Safety across Northwest Arkansas — Benton and Washington counties. No public vote. No warrant required. Know your rights.">
+
+  <!-- Primary SEO -->
+  <title>DEFLOCK NWA | Automated License Plate Reader Surveillance Tracker - Northwest Arkansas</title>
+  <meta name="description" content="Tracking and exposing the automated license plate reader (ALPR) surveillance network operated by Flock Safety across Northwest Arkansas, Benton and Washington counties. No public vote. No warrant required. Know your rights.">
+  <meta name="keywords" content="Flock Safety, ALPR, license plate reader, Northwest Arkansas, Benton County, Washington County, surveillance, Fayetteville, Rogers, Bentonville, Springdale, FOIA, privacy">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="DEFLOCK NWA — ALPR Surveillance Tracker">
+  <meta name="author" content="DEFLOCK NWA">
+  <link rel="canonical" href="https://deflocknwa.org/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DEFLOCK NWA | ALPR Surveillance Tracker - Northwest Arkansas">
   <meta property="og:description" content="120+ Flock Safety cameras track every vehicle across NWA with zero public referendum. Explore the map, file FOIA requests, and take action.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://deflocknwa.org/">
+  <meta property="og:image" content="https://deflocknwa.org/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="DEFLOCK NWA">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DEFLOCK NWA — ALPR Surveillance Tracker">
+  <meta name="twitter:title" content="DEFLOCK NWA | ALPR Surveillance Tracker - Northwest Arkansas">
   <meta name="twitter:description" content="Automated mass surveillance across Northwest Arkansas. No public vote. No warrant.">
+  <meta name="twitter:image" content="https://deflocknwa.org/assets/og-image.png">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://deflocknwa.org/#website",
+        "url": "https://deflocknwa.org/",
+        "name": "DEFLOCK NWA",
+        "description": "Open-source surveillance accountability project tracking automated license plate reader (ALPR) cameras across Northwest Arkansas.",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://deflocknwa.org/#webpage",
+        "url": "https://deflocknwa.org/",
+        "name": "DEFLOCK NWA | Automated License Plate Reader Surveillance Tracker - Northwest Arkansas",
+        "description": "Tracking and exposing the automated ALPR surveillance network operated by Flock Safety across Benton and Washington counties in Northwest Arkansas.",
+        "isPartOf": { "@id": "https://deflocknwa.org/#website" },
+        "about": {
+          "@type": "GovernmentService",
+          "name": "Flock Safety ALPR Surveillance Network",
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Northwest Arkansas",
+            "containsPlace": [
+              { "@type": "City", "name": "Fayetteville", "containedInPlace": { "@type": "State", "name": "Arkansas" } },
+              { "@type": "City", "name": "Rogers", "containedInPlace": { "@type": "State", "name": "Arkansas" } },
+              { "@type": "City", "name": "Bentonville", "containedInPlace": { "@type": "State", "name": "Arkansas" } },
+              { "@type": "City", "name": "Springdale", "containedInPlace": { "@type": "State", "name": "Arkansas" } }
+            ]
+          }
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://deflocknwa.org/#organization",
+        "name": "DEFLOCK NWA",
+        "url": "https://deflocknwa.org/",
+        "description": "Open-source public advocacy project documenting automated license plate reader (ALPR) surveillance infrastructure across Northwest Arkansas.",
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Northwest Arkansas, Arkansas, United States"
+        },
+        "sameAs": ["https://deflock.org"]
+      }
+    ]
+  }
+  </script>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,9 +116,9 @@
 
 <body class="bg-[#09090b] text-neutral-100 font-sans antialiased">
 
-  <!-- ═══════════════════════════════════════════════════════════════════
+  <!-- ===============================================================
        SYSTEM BAR
-       ═══════════════════════════════════════════════════════════════════ -->
+       =============================================================== -->
   <div class="border-b border-neutral-800 bg-[#09090b]/90 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
@@ -71,12 +138,27 @@
         </a>
 
         <!-- Desktop nav -->
-        <div class="hidden md:flex items-center gap-6 font-mono text-[0.7rem] tracking-wider uppercase">
+        <div class="hidden lg:flex items-center gap-5 font-mono text-[0.68rem] tracking-wider uppercase">
+          <a href="#news" class="nav-link">News</a>
           <a href="#scope" class="nav-link">Scope</a>
-          <a href="#map" class="nav-link">Map</a>
           <a href="#analysis" class="nav-link">Analysis</a>
           <a href="#foia" class="nav-link">FOIA</a>
           <a href="#action" class="nav-link">Action</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#blog" class="nav-link">Blog</a>
+          <a href="#partners" class="nav-link">Partners</a>
+          <a href="#donate" class="nav-link text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-sm hover:bg-emerald-500/10 transition-colors">Donate</a>
+          <a href="mailto:deflocknwa@proton.me" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Medium-screen desktop nav -->
+        <div class="hidden md:flex lg:hidden items-center gap-3 font-mono text-[0.65rem] tracking-wider uppercase">
+          <a href="#news" class="nav-link">News</a>
+          <a href="#scope" class="nav-link">Scope</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#blog" class="nav-link">Blog</a>
+          <a href="#donate" class="nav-link text-emerald-400">Donate</a>
+          <a href="mailto:deflocknwa@proton.me" class="nav-link">Contact</a>
         </div>
 
         <!-- Mobile hamburger -->
@@ -87,35 +169,40 @@
 
       <!-- Mobile menu -->
       <div id="nav-menu" class="hidden md:hidden border-t border-neutral-800 py-3 space-y-2 font-mono text-xs tracking-wider uppercase">
+        <a href="#news" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">News</a>
         <a href="#scope" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Scope</a>
-        <a href="#map" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Map</a>
         <a href="#analysis" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Analysis</a>
         <a href="#foia" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">FOIA</a>
         <a href="#action" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Action</a>
+        <a href="#about" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">About</a>
+        <a href="#blog" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Blog</a>
+        <a href="#partners" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Partners in Freedom</a>
+        <a href="#donate" class="block py-1.5 text-emerald-400 hover:text-emerald-300 transition-colors">Donate (Crypto)</a>
+        <a href="mailto:deflocknwa@proton.me" class="block py-1.5 text-neutral-400 hover:text-neutral-100 transition-colors">Contact (deflocknwa@proton.me)</a>
       </div>
     </div>
   </div>
 
   <main>
-    <!-- ═══════════════════════════════════════════════════════════════
+    <!-- ===============================================================
          HERO
-         ═══════════════════════════════════════════════════════════════ -->
+         =============================================================== -->
     <section class="scanline-bg relative border-b border-neutral-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative z-10">
-        <div class="max-w-3xl">
+        <div class="max-w-2xl">
           <div class="alert-badge mb-6">
             <span style="width:5px;height:5px;border-radius:50%;background:#ef4444;box-shadow:0 0 4px rgba(239,68,68,0.6);" aria-hidden="true"></span>
-            SURVEILLANCE ALERT — NWA REGION
+            SURVEILLANCE ALERT: NWA REGION
           </div>
 
-          <h1 class="font-mono text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-neutral-100">
-            Automated Mass Surveillance Across Northwest&nbsp;Arkansas.
+          <h1 class="font-mono text-3xl sm:text-4xl md:text-[2.75rem] font-bold tracking-tight leading-[1.15] text-neutral-100">
+            Automated Mass Surveillance<br>Across Northwest Arkansas.
           </h1>
 
           <p class="mt-6 text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl">
             Flock Safety's automated license plate recognition (ALPR) cameras silently photograph
             and log every vehicle crossing through Fayetteville, Springdale, Rogers, Bentonville,
-            and surrounding municipalities — capturing your license plate, vehicle make, model, color,
+            and surrounding municipalities, capturing your license plate, vehicle make, model, color,
             and identifying features on every trip. No public referendum was held. No individualized
             warrants are required. Washington County's Quorum Court voted to bar county funds
             from ALPR systems, but municipal deployments continue to expand unchecked across
@@ -123,9 +210,9 @@
           </p>
 
           <div class="flex flex-wrap gap-3 mt-8">
-            <a href="#map" class="btn-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7 11.5 7.3 11.8a1 1 0 0 0 1.4 0C13 21.5 20 15.4 20 10a8 8 0 0 0-8-8z"/></svg>
-              Explore The Map
+            <a href="#analysis" class="btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/></svg>
+              View The Dossier
             </a>
             <a href="#foia" class="btn-outline">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
@@ -136,12 +223,95 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         REGIONAL SCOPE — METRIC CARDS
-         ═══════════════════════════════════════════════════════════════ -->
+    <!-- ===============================================================
+         NEWS FEED
+         =============================================================== -->
+    <section id="news" class="border-b border-neutral-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-3">
+          <div>
+            <div class="section-label">Intelligence Feed // National &amp; Local</div>
+            <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100">
+              Flock Safety in the News
+            </h2>
+          </div>
+          <!-- Legend -->
+          <div class="flex items-center gap-5 font-mono text-[0.6rem] tracking-wider uppercase shrink-0">
+            <span class="news-legend news-legend--win">
+              <span class="news-legend-dot news-legend-dot--win" aria-hidden="true"></span>
+              Win / Removal
+            </span>
+            <span class="news-legend news-legend--flag">
+              <span class="news-legend-dot news-legend-dot--flag" aria-hidden="true"></span>
+              Abuse / Misuse
+            </span>
+          </div>
+        </div>
+
+        <p class="text-neutral-500 text-xs font-mono max-w-2xl">
+          Curated coverage tracking Flock Safety ALPR rollouts, community pushback, government bans,
+          documented misuse, and civil-liberties litigation nationwide.
+        </p>
+
+        <!-- Live feed status bar -->
+        <div class="flex items-center gap-3 mt-3 mb-7 flex-wrap">
+          <div id="news-live-status" class="news-live-indicator" aria-live="polite" aria-atomic="true">
+            <span class="news-live-dot" aria-hidden="true"></span>
+            <span id="news-live-label">Connecting…</span>
+          </div>
+          <span id="news-live-ts" class="font-mono text-[0.58rem] text-neutral-700 tracking-wider"></span>
+          <button id="news-refresh" type="button" class="news-refresh-btn" aria-label="Refresh live news feed">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            Refresh
+          </button>
+        </div>
+
+        <!-- Dual-panel: Wins | Abuse -->
+        <div class="news-dual">
+
+          <!-- Wins panel -->
+          <div class="news-panel news-panel--win">
+            <div class="news-panel__hdr">
+              <span class="news-panel__dot" aria-hidden="true"></span>
+              <span class="news-panel__label">Wins &amp; Removals</span>
+              <span id="news-win-count" class="news-panel__count">—</span>
+            </div>
+            <div id="news-win-list" role="list" class="news-panel__list" aria-label="Community wins and removals"></div>
+            <button id="news-win-more" type="button" class="news-panel__more" hidden></button>
+          </div>
+
+          <!-- Abuse / Misuse panel -->
+          <div class="news-panel news-panel--flag">
+            <div class="news-panel__hdr">
+              <span class="news-panel__dot" aria-hidden="true"></span>
+              <span class="news-panel__label">Abuse &amp; Misuse</span>
+              <span id="news-flag-count" class="news-panel__count">—</span>
+            </div>
+            <div id="news-flag-list" role="list" class="news-panel__list" aria-label="Abuse and misuse reports"></div>
+            <button id="news-flag-more" type="button" class="news-panel__more" hidden></button>
+          </div>
+
+        </div>
+
+        <p class="mt-6 text-neutral-600 text-[0.65rem] font-mono">
+          Live articles auto-pulled from Google News via RSS. Curated articles sourced from public records.
+          Links open in a new tab. Know of a story we're missing?
+          <a href="mailto:news@deflocknwa.org" class="text-emerald-600 hover:text-emerald-500 transition-colors">Submit a tip.</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         REGIONAL SCOPE: METRIC CARDS
+         =============================================================== -->
     <section id="scope" class="border-b border-neutral-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
-        <div class="section-label">Regional Scope — Benton &amp; Washington Counties</div>
+        <div class="section-label">Regional Scope: Benton &amp; Washington Counties</div>
+
+        <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100 mb-6">
+          ALPR Network Coverage in Northwest Arkansas
+        </h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-800">
           <div class="metric-card">
@@ -171,43 +341,45 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         SURVEILLANCE MAP
-         ═══════════════════════════════════════════════════════════════ -->
-    <section id="map-section" class="border-b border-neutral-800">
+    <!-- ===============================================================
+         SURVEILLANCE MAP (hidden: pending map tile/API source resolution)
+         To restore: remove the `hidden` attribute from the section below
+         and remove the early-return guard in initMap() in app.js.
+         =============================================================== -->
+    <section id="map-section" class="border-b border-neutral-800" hidden>
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
           <div>
             <div class="section-label">Live Surveillance Map</div>
             <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100">
-              Known ALPR Camera Locations
+              Known ALPR Camera Locations Across NWA
             </h2>
           </div>
           <a href="https://deflock.org" target="_blank" rel="noopener noreferrer"
              class="font-mono text-xs tracking-wider text-emerald-500 hover:text-emerald-400 transition-colors uppercase whitespace-nowrap">
-            Submit Data →
+            Submit Camera Data
           </a>
         </div>
         <div id="map" role="application" aria-label="Interactive map of known ALPR camera locations across Northwest Arkansas"></div>
         <p class="mt-4 text-neutral-600 text-[0.65rem] font-mono">
           Markers represent approximate locations based on community data collection and public records.
-          Click a marker for camera details. Red dots = confirmed active units.
+          Click a marker for camera details. Red dots indicate confirmed active units.
         </p>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         TECHNICAL DOSSIER — WHAT GETS LOGGED
-         ═══════════════════════════════════════════════════════════════ -->
+    <!-- ===============================================================
+         TECHNICAL DOSSIER: WHAT GETS LOGGED
+         =============================================================== -->
     <section id="analysis" class="border-b border-neutral-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
         <div class="section-label">Technical Dossier</div>
         <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100 mb-2">
-          What Gets Logged Every Time You Drive Past
+          What Gets Logged Every Time You Drive Past a Flock Safety Camera
         </h2>
         <p class="text-neutral-400 text-sm leading-relaxed mb-10 max-w-2xl">
           Each Flock Safety Falcon camera captures and transmits the following data to cloud storage
-          accessible by subscribing law enforcement agencies — with no warrant, probable cause, or
+          accessible by subscribing law enforcement agencies, with no warrant, probable cause, or
           judicial oversight required for queries.
         </p>
 
@@ -230,7 +402,7 @@
               <div class="data-field-icon"></div>
               <div>
                 <span class="text-neutral-200 text-sm font-medium">Vehicle Identification</span>
-                <p class="text-neutral-500 text-xs mt-0.5">Make, model, generation, body type, and color — matched against a vehicle fingerprint database.</p>
+                <p class="text-neutral-500 text-xs mt-0.5">Make, model, generation, body type, and color, matched against a vehicle fingerprint database.</p>
               </div>
             </div>
 
@@ -238,7 +410,7 @@
               <div class="data-field-icon"></div>
               <div>
                 <span class="text-neutral-200 text-sm font-medium">Distinguishing Features</span>
-                <p class="text-neutral-500 text-xs mt-0.5">Bumper stickers, roof racks, trailer hitches, dents, aftermarket modifications — logged as "Vehicle Fingerprint" attributes for re-identification even without a readable plate.</p>
+                <p class="text-neutral-500 text-xs mt-0.5">Bumper stickers, roof racks, trailer hitches, dents, aftermarket modifications, logged as "Vehicle Fingerprint" attributes for re-identification even without a readable plate.</p>
               </div>
             </div>
 
@@ -254,7 +426,7 @@
               <div class="data-field-icon"></div>
               <div>
                 <span class="text-neutral-200 text-sm font-medium">Contextual Image Capture</span>
-                <p class="text-neutral-500 text-xs mt-0.5">Full-frame photograph of the vehicle, occupant silhouettes, and surrounding traffic — retained alongside metadata.</p>
+                <p class="text-neutral-500 text-xs mt-0.5">Full-frame photograph of the vehicle, occupant silhouettes, and surrounding traffic, retained alongside metadata.</p>
               </div>
             </div>
 
@@ -279,7 +451,7 @@
                 <p class="text-neutral-400">
                   The Supreme Court ruled in <em>Carpenter v. United States</em> (2018) that prolonged tracking
                   of an individual's movements constitutes a Fourth Amendment search. ALPR networks that
-                  aggregate location data over time may meet this threshold — yet no Arkansas municipality
+                  aggregate location data over time may meet this threshold, yet no Arkansas municipality
                   has enacted warrant requirements for ALPR queries. Officers query plates without
                   individualized suspicion on a routine basis.
                 </p>
@@ -310,7 +482,7 @@
                 <p class="text-neutral-400">
                   The standard Flock Safety data retention window is 30 days, but agencies can negotiate
                   longer retention periods. During this window, the complete travel history of every vehicle
-                  that passes a camera is searchable — regardless of whether the vehicle or its owner
+                  that passes a camera is searchable, regardless of whether the vehicle or its owner
                   is under investigation.
                 </p>
               </div>
@@ -320,9 +492,9 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════
+    <!-- ===============================================================
          FOIA GENERATOR
-         ═══════════════════════════════════════════════════════════════ -->
+         =============================================================== -->
     <section id="foia" class="border-b border-neutral-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
         <div class="section-label">FOIA Generator</div>
@@ -357,24 +529,24 @@
           <button id="foia-copy" class="btn-primary copy-btn" type="button">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             Copy to Clipboard
-            <span class="copy-feedback">✓ COPIED</span>
+            <span class="copy-feedback">COPIED</span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════
+    <!-- ===============================================================
          CITIZEN ACTION
-         ═══════════════════════════════════════════════════════════════ -->
+         =============================================================== -->
     <section id="action" class="border-b border-neutral-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
         <div class="section-label">Take Action</div>
         <h2 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-neutral-100 mb-2">
-          Contact Your Representatives
+          Contact Your Representatives in Benton and Washington Counties
         </h2>
         <p class="text-neutral-400 text-sm leading-relaxed mb-10 max-w-2xl">
           Attend public meetings. Submit public comments. Demand transparency and civilian oversight
-          before ALPR networks are expanded further.
+          before ALPR networks are expanded further across Northwest Arkansas.
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-800 mb-12">
@@ -422,7 +594,7 @@
           </div>
         </div>
 
-        <!-- Newsletter Alert Signup -->
+        <!-- Surveillance Alert Signup -->
         <div class="border border-neutral-800 bg-[#0a0a0c] p-6 max-w-lg">
           <h3 class="font-mono text-xs tracking-[0.14em] uppercase text-neutral-400 mb-1">
             Surveillance Alerts
@@ -430,29 +602,323 @@
           <p class="text-neutral-500 text-xs mb-4">
             Get notified when new cameras are discovered, FOIA responses are published, or council votes are scheduled.
           </p>
-          <form id="alert-form" class="flex gap-2">
+          <form
+            id="alert-form"
+            action="https://buttondown.com/api/emails/embed-subscribe/DeFlockNWA"
+            method="post"
+            target="_blank"
+            class="flex gap-2"
+            novalidate
+          >
             <input
               id="alert-email"
               type="email"
+              name="email"
               class="email-input flex-1"
               placeholder="your@email.address"
               required
               aria-label="Email address for surveillance alerts"
+              autocomplete="email"
             >
             <button type="submit" class="btn-primary whitespace-nowrap">Subscribe</button>
           </form>
-          <p id="alert-feedback" class="mt-2 font-mono text-xs" style="display:none;"></p>
+          <div class="flex items-center justify-between mt-2 min-h-[1.25rem]">
+            <p id="alert-feedback" class="font-mono text-xs" style="display:none;" role="status" aria-live="polite"></p>
+            <a href="https://buttondown.com/refer/DeFlockNWA" target="_blank" rel="noopener noreferrer" class="font-mono text-[10px] text-neutral-600 hover:text-neutral-400 transition-colors ml-auto">Powered by Buttondown ↗</a>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         ABOUT
+         =============================================================== -->
+    <hr class="section-divider">
+    <section id="about" class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="mb-8">
+          <p class="font-mono text-xs tracking-[0.14em] uppercase text-emerald-500 mb-2">
+            MISSION // WHO WE ARE
+          </p>
+          <h2 class="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100">
+            About De-Flock NWA
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 border border-neutral-800 bg-[#0d0d10] p-6 sm:p-8">
+            <h3 class="font-mono text-xs tracking-[0.12em] uppercase text-neutral-400 mb-3">Project Overview</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed mb-4">
+              <!-- USER BLURB ENTRY POINT -->
+              De-Flock NWA is an independent, non-partisan civil watchdog project dedicated to documenting, mapping, and challenging warrantless mass vehicular surveillance across Benton and Washington Counties in Northwest Arkansas.
+            </p>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+              Automated license plate readers (ALPRs) create an inescapable dragnet of public movements, tracking everyday residents without warrants or probable cause. We believe that public safety should never come at the expense of Fourth Amendment privacy rights and community transparency.
+            </p>
+            <div class="pt-4 border-t border-neutral-800 flex items-center gap-2">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="font-mono text-xs text-neutral-400">100% Volunteer Driven &bull; Zero Corporate Funding</span>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="border border-neutral-800 bg-[#0d0d10] p-5">
+              <h4 class="font-mono text-xs tracking-wider uppercase text-neutral-400 mb-1">Open Data</h4>
+              <p class="text-neutral-500 text-xs leading-relaxed">
+                All camera records, contracts, and meeting minutes collected are released into the public domain.
+              </p>
+            </div>
+            <div class="border border-neutral-800 bg-[#0d0d10] p-5">
+              <h4 class="font-mono text-xs tracking-wider uppercase text-neutral-400 mb-1">Civilian Oversight</h4>
+              <p class="text-neutral-500 text-xs leading-relaxed">
+                Empowering local residents with the records, facts, and legal precedents to demand accountability at city council meetings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         BLOG / DISPATCHES
+         =============================================================== -->
+    <hr class="section-divider">
+    <section id="blog" class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+          <div>
+            <p class="font-mono text-xs tracking-[0.14em] uppercase text-emerald-500 mb-2">
+              DISPATCHES // ANALYSIS &amp; UPDATES
+            </p>
+            <h2 class="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100">
+              Blog &amp; Field Notes
+            </h2>
+            <p class="text-neutral-400 text-sm mt-1 max-w-xl">
+              Local reporting, council vote debriefs, investigations, and newsletter issue summaries from the frontlines in NWA.
+            </p>
+          </div>
+          <a
+            href="https://buttondown.com/DeFlockNWA/archive"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-mono text-xs text-emerald-500 hover:text-emerald-400 border border-emerald-500/30 px-3 py-1.5 transition-colors self-start sm:self-auto whitespace-nowrap"
+          >
+            Newsletter Archive ↗
+          </a>
+        </div>
+
+        <div id="blog-posts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article class="border border-neutral-800 bg-[#0d0d10] p-6 hover:border-neutral-700 transition-colors">
+            <div class="flex items-center justify-between text-neutral-500 font-mono text-xs mb-3">
+              <span>LOCAL DISPATCH #01</span>
+              <span>OCT 2026</span>
+            </div>
+            <h3 class="font-mono text-base font-bold text-neutral-100 mb-2">
+              Pea Ridge Paved the Way: How Grassroots Pressure Removed Flock in NWA
+            </h3>
+            <p class="text-neutral-400 text-xs leading-relaxed mb-4">
+              When Pea Ridge chose not to renew its Flock contract, it proved that pushback works in Northwest Arkansas. Here is the blueprint of what happened and what other NWA municipalities can learn from it.
+            </p>
+            <div class="flex items-center justify-between text-xs font-mono pt-3 border-t border-neutral-800">
+              <span class="text-emerald-400">ANALYSIS</span>
+              <a href="#action" class="text-neutral-400 hover:text-neutral-200">Read in Newsletter &rarr;</a>
+            </div>
+          </article>
+
+          <article class="border border-neutral-800 bg-[#0d0d10] p-6 hover:border-neutral-700 transition-colors">
+            <div class="flex items-center justify-between text-neutral-500 font-mono text-xs mb-3">
+              <span>FIELD REPORT #02</span>
+              <span>SEP 2026</span>
+            </div>
+            <h3 class="font-mono text-base font-bold text-neutral-100 mb-2">
+              The $800k Hidden Interlocal Agreement: Washington County's Vote
+            </h3>
+            <p class="text-neutral-400 text-xs leading-relaxed mb-4">
+              A breakdown of the 13–2 Quorum Court vote that blocked taxpayer funds from subsidizing ALPR network expansion across unincorporated county roads.
+            </p>
+            <div class="flex items-center justify-between text-xs font-mono pt-3 border-t border-neutral-800">
+              <span class="text-emerald-400">COUNCIL DEBRIEF</span>
+              <a href="#action" class="text-neutral-400 hover:text-neutral-200">Read in Newsletter &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         PARTNERS IN FREEDOM
+         =============================================================== -->
+    <hr class="section-divider">
+    <section id="partners" class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="mb-8">
+          <p class="font-mono text-xs tracking-[0.14em] uppercase text-emerald-500 mb-2">
+            ALLIANCES // CIVIL LIBERTIES COALITION
+          </p>
+          <h2 class="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100">
+            Partners in Freedom
+          </h2>
+          <p class="text-neutral-400 text-sm mt-1 max-w-xl">
+            Allied organizations, open-source researchers, and legal advocates dedicated to halting warrantless dragnet surveillance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a
+            href="https://www.eff.org/pages/automated-license-plate-readers-alpr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-neutral-800 bg-[#0d0d10] p-5 hover:border-neutral-600 transition-colors block group"
+          >
+            <div class="font-mono text-xs text-neutral-500 mb-2 group-hover:text-emerald-400 transition-colors">LEGAL &amp; POLICY ↗</div>
+            <h3 class="font-mono text-sm font-bold text-neutral-200 mb-2">Electronic Frontier Foundation</h3>
+            <p class="text-neutral-400 text-xs leading-relaxed">
+              Defending civil liberties in the digital age. Creators of the Atlas of Surveillance ALPR tracker.
+            </p>
+          </a>
+
+          <a
+            href="https://www.acluarkansas.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-neutral-800 bg-[#0d0d10] p-5 hover:border-neutral-600 transition-colors block group"
+          >
+            <div class="font-mono text-xs text-neutral-500 mb-2 group-hover:text-emerald-400 transition-colors">ARKANSAS ADVOCACY ↗</div>
+            <h3 class="font-mono text-sm font-bold text-neutral-200 mb-2">ACLU of Arkansas</h3>
+            <p class="text-neutral-400 text-xs leading-relaxed">
+              Protecting constitutional rights and pushing for government accountability across the Natural State.
+            </p>
+          </a>
+
+          <a
+            href="https://deflock.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-neutral-800 bg-[#0d0d10] p-5 hover:border-neutral-600 transition-colors block group"
+          >
+            <div class="font-mono text-xs text-neutral-500 mb-2 group-hover:text-emerald-400 transition-colors">GLOBAL OPEN DATA ↗</div>
+            <h3 class="font-mono text-sm font-bold text-neutral-200 mb-2">DeFlock.org</h3>
+            <p class="text-neutral-400 text-xs leading-relaxed">
+              Global open-source project mapping ALPR cameras worldwide using OpenStreetMap.
+            </p>
+          </a>
+
+          <a
+            href="https://ij.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-neutral-800 bg-[#0d0d10] p-5 hover:border-neutral-600 transition-colors block group"
+          >
+            <div class="font-mono text-xs text-neutral-500 mb-2 group-hover:text-emerald-400 transition-colors">LITIGATION ↗</div>
+            <h3 class="font-mono text-sm font-bold text-neutral-200 mb-2">Institute for Justice</h3>
+            <p class="text-neutral-400 text-xs leading-relaxed">
+              Public interest law firm litigating Fourth Amendment challenges against automated surveillance traps.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         DONATE (CRYPTO WALLETS)
+         =============================================================== -->
+    <hr class="section-divider">
+    <section id="donate" class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="mb-8">
+          <p class="font-mono text-xs tracking-[0.14em] uppercase text-emerald-500 mb-2">
+            DIRECT ACTION // PRIVACY-PRESERVING CONTRIBUTIONS
+          </p>
+          <h2 class="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100">
+            Donate
+          </h2>
+          <p class="text-neutral-400 text-sm mt-1 max-w-xl">
+            Support independent FOIA fee filings, hosting, and field verification equipment. We accept cryptocurrency so your financial privacy remains protected.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Monero Card -->
+          <div class="border border-emerald-500/40 bg-[#0c120f] p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-2 right-2 bg-emerald-500/10 text-emerald-400 font-mono text-[9px] uppercase px-2 py-0.5 border border-emerald-500/20">
+              Recommended (Private)
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="font-mono text-sm font-bold text-neutral-100">Monero (XMR)</span>
+              </div>
+              <p class="text-neutral-400 text-xs mb-4">
+                Untraceable &amp; untracked. Recommended for donors seeking maximum financial confidentiality.
+              </p>
+              <div class="bg-black/60 p-3 border border-neutral-800 rounded font-mono text-xs text-neutral-300 break-all mb-4 select-all">
+                <span id="xmr-address" data-wallet="888tNkZrPN6JsEgekjMnABU4TBzc2Dt29EPAvkFxbANsAnJYPbb3iQ1YBRk1UXcdRsiKc9dhwMVgN5S9cQUiyoogDavup3H">888tNkZrPN...Davup3H</span>
+              </div>
+            </div>
+            <button
+              class="wallet-copy-btn btn-outline text-xs w-full justify-center"
+              data-target="xmr-address"
+            >
+              Copy Monero Address
+            </button>
+          </div>
+
+          <!-- Bitcoin Card -->
+          <div class="border border-neutral-800 bg-[#0d0d10] p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="font-mono text-sm font-bold text-neutral-100">Bitcoin (BTC)</span>
+              </div>
+              <p class="text-neutral-400 text-xs mb-4">
+                Native SegWit / Taproot contributions for public infrastructure support.
+              </p>
+              <div class="bg-black/60 p-3 border border-neutral-800 rounded font-mono text-xs text-neutral-300 break-all mb-4 select-all">
+                <span id="btc-address" data-wallet="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">bc1qxy2kgdy...3kkfjhx0wlh</span>
+              </div>
+            </div>
+            <button
+              class="wallet-copy-btn btn-outline text-xs w-full justify-center"
+              data-target="btc-address"
+            >
+              Copy Bitcoin Address
+            </button>
+          </div>
+
+          <!-- Ethereum / USDC Card -->
+          <div class="border border-neutral-800 bg-[#0d0d10] p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="font-mono text-sm font-bold text-neutral-100">Ethereum &amp; USDC</span>
+              </div>
+              <p class="text-neutral-400 text-xs mb-4">
+                ETH, USDC, or stablecoins on Ethereum &amp; Layer-2 networks (Arbitrum, Optimism).
+              </p>
+              <div class="bg-black/60 p-3 border border-neutral-800 rounded font-mono text-xs text-neutral-300 break-all mb-4 select-all">
+                <span id="eth-address" data-wallet="0x71C836643F373305a4b7325F37e1919864273E11">0x71C8366...64273E11</span>
+              </div>
+            </div>
+            <button
+              class="wallet-copy-btn btn-outline text-xs w-full justify-center"
+              data-target="eth-address"
+            >
+              Copy ETH Address
+            </button>
+          </div>
+        </div>
+
+        <p class="mt-4 font-mono text-[11px] text-neutral-500 text-center">
+          Note: Wallet addresses can be updated anytime. Need a different payment method or grant correspondence?
+          <a href="mailto:deflocknwa@proton.me" class="text-emerald-500 hover:text-emerald-400">Email us</a>.
+        </p>
       </div>
     </section>
   </main>
 
-  <!-- ═══════════════════════════════════════════════════════════════════
+  <!-- ===============================================================
        FOOTER
-       ═══════════════════════════════════════════════════════════════════ -->
+       =============================================================== -->
   <footer class="border-t border-neutral-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
         <div>
           <p class="font-mono text-xs tracking-wider uppercase text-neutral-500 mb-3">DEFLOCK NWA</p>
@@ -476,9 +942,19 @@
           <ul class="space-y-1.5">
             <li><a href="https://atlasofsurveillance.org/" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">EFF Atlas of Surveillance</a></li>
             <li><a href="https://www.acluarkansas.org/" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">ACLU of Arkansas</a></li>
-            <li><a href="https://deflock.org" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">DeFlock.org — National ALPR Map</a></li>
-            <li><a href="https://www.eff.org/pages/automated-license-plate-readers-alpr" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">EFF — ALPR Explained</a></li>
+            <li><a href="https://deflock.org" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">DeFlock.org: National ALPR Map</a></li>
+            <li><a href="https://www.eff.org/pages/automated-license-plate-readers-alpr" target="_blank" rel="noopener noreferrer" class="footer-link text-xs">EFF: ALPR Explained</a></li>
           </ul>
+        </div>
+
+        <div>
+          <p class="font-mono text-xs tracking-wider uppercase text-neutral-500 mb-3">Contact &amp; Tips</p>
+          <p class="text-neutral-600 text-xs leading-relaxed mb-3">
+            Secure, direct line for tips, FOIA records, or council updates. For end-to-end encryption, write from a Proton account:
+          </p>
+          <a href="mailto:deflocknwa@proton.me" class="font-mono text-xs text-emerald-400 hover:text-emerald-300 transition-colors block break-all">
+            deflocknwa@proton.me ↗
+          </a>
         </div>
       </div>
 
