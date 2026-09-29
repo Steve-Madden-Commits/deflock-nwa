@@ -44,6 +44,26 @@
     "pinned": true
   },
   {
+    "type": "win",
+    "scope": "national",
+    "headline": "Maine's 21-Day ALPR Retention Limit Remains the Strictest Protective Law in the Nation",
+    "excerpt": "Maine's statute (29-A M.R.S. § 2117-A) mandates deletion of non-investigative plate data within 21 days and bans all private ALPR use — the only law of its kind in the U.S., and a model advocates are pushing other states to adopt.",
+    "source": "Maine Legislature / ACLU of Maine",
+    "date": "2009 / ongoing",
+    "url": "https://www.aclumaine.org/en/legislation/sb-3-act-protect-maine-citizens-use-automated-license-plate-readers",
+    "score": 78
+  },
+  {
+    "type": "win",
+    "scope": "national",
+    "headline": "Institute for Justice Launches ALPR Abuse Tracker: 140+ Documented Incidents Nationwide",
+    "excerpt": "The Institute for Justice published a searchable database of over 140 confirmed ALPR abuse cases by law enforcement, including romantic stalking, wrongful stops, and unauthorized personal surveillance — most discovered only through victim reports rather than internal audits.",
+    "source": "Institute for Justice",
+    "date": "Aug 2026",
+    "url": "https://ij.org/issues/privacy/plate-privacy/",
+    "score": 78
+  },
+  {
     "type": "flag",
     "scope": "national",
     "headline": "Texas Sheriff Used 83,000 Flock Cameras to Track Woman Suspected of Self-Managing an Abortion",
@@ -136,24 +156,28 @@
     "score": 80
   },
   {
-    "type": "win",
-    "scope": "national",
-    "headline": "Maine's 21-Day ALPR Retention Limit Remains the Strictest Protective Law in the Nation",
-    "excerpt": "Maine's statute (29-A M.R.S. § 2117-A) mandates deletion of non-investigative plate data within 21 days and bans all private ALPR use — the only law of its kind in the U.S., and a model advocates are pushing other states to adopt.",
-    "source": "Maine Legislature / ACLU of Maine",
-    "date": "2009 / ongoing",
-    "url": "https://www.aclumaine.org/en/legislation/sb-3-act-protect-maine-citizens-use-automated-license-plate-readers",
-    "score": 78
+    "type": "flag",
+    "scope": "local",
+    "headline": "Who’s tracking Arizona drivers through Flock cameras? Often, it’s police from other states.",
+    "excerpt": "Who’s tracking Arizona drivers through Flock cameras? Often, it’s police from other states.&nbsp;&nbsp;Havasu News",
+    "source": "Havasu News",
+    "date": "Sep 2026",
+    "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQRm1xbDdUOUNpWDI1SHpFSjBLaDJhLXhvbkdxNXYyYlJNRUdscEM5LURPYWZYdGlZMzh6eXlTVUpfdTc2Tm0tc2xBRU9fXzQ2OW1CMHJVSGtZZWhzanZ1dlJUZGRCRng5X2k0Y0tqZS02TkxwSjNfNERkNWdjYW9ya1V2MzExU2VaU0dZemJNN1NWamJrVFBmdnpEcnYxVldRNzlQTEVPemFpOF9wUy1HUG1zc3NsZFNxZG8zeV9kWEZNUDY1YTA5eHVxUXFMX2l3VlhybzUzekZDdzJ0bzFtLU41MW15cXNlUkwzcllrdHBIMDRFaW5GZUxhbnRQMVk?oc=5",
+    "score": 78,
+    "pinned": false,
+    "added_at": "2026-09-29T06:03:45.847443+00:00"
   },
   {
-    "type": "win",
-    "scope": "national",
-    "headline": "Institute for Justice Launches ALPR Abuse Tracker: 140+ Documented Incidents Nationwide",
-    "excerpt": "The Institute for Justice published a searchable database of over 140 confirmed ALPR abuse cases by law enforcement, including romantic stalking, wrongful stops, and unauthorized personal surveillance — most discovered only through victim reports rather than internal audits.",
-    "source": "Institute for Justice",
-    "date": "Aug 2026",
-    "url": "https://ij.org/issues/privacy/plate-privacy/",
-    "score": 78
+    "type": "flag",
+    "scope": "local",
+    "headline": "Victory: Arkansas City Moves Surveillance Camera from in Front of Innocent Family's Home Following Letter from National Law Firm",
+    "excerpt": "Victory: Arkansas City Moves Surveillance Camera from in Front of Innocent Family's Home Following Letter from National Law Firm&nbsp;&nbsp;The Institute for Justice",
+    "source": "The Institute for Justice",
+    "date": "Jul 2025",
+    "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOWmU3SzctM0hJbkxpX1pJX1JOcnItNFhFR0xRRTA2WUZfMzljV3REMC13N19KX29vaHIyTXZGZ2UwRFFCc2JtYkhYNGJ0MWY4VXFrTVowc2J3T1VKMHlXZHlDaThQWDVQZUdfZzF2MFd0RE9JcTBZbU9pcHp4SThHNnBhOFN5V2ppYVhSZlBUalBPUHZwaDF0UjF1WE15d3hYLVVUd3EwM3p6OEp5UjJqMXpOanBwNUlsdGY3QUtpZ19ycTBPSzRxbWswamhjVHJhNHNXdUxpbkhQUUhOOW4yU0lSTjhEZVp2OTdZZQ?oc=5",
+    "score": 78,
+    "pinned": false,
+    "added_at": "2026-09-29T06:03:46.222071+00:00"
   },
   {
     "type": "flag",
@@ -164,5 +188,53 @@
     "date": "2025–2026",
     "url": "https://www.aclu.org/fighting-creepy-alpr-cameras",
     "score": 75
+  },
+  {
+    "type": "flag",
+    "scope": "local",
+    "headline": "Harrisburg covers license plate readers as council weighs their future",
+    "excerpt": "Harrisburg covers license plate readers as council weighs their future&nbsp;&nbsp;K8 News | Jonesboro, Arkansas",
+    "source": "K8 News | Jonesboro, Arkansas",
+    "date": "Sep 2026",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNOWt1aUd1LXFySkxiS3FBQ1BERGFGUUdBd09heERjZnJlbDJCRU1HbnRJQkhlWjgyNXAwcFdoUDI2elFlcFRfWkgxREFZMEM1ZG5Fc0gyUWNHcWFuS3lTOElRbmVpdGctOElEd21idWJiMldsdEFFMVJwVzJqdXpoaWcyV3I4QVdyZldhUkhxZDlRQW9OZGh6cUVVMzdrRFRDOHlF0gG3AUFVX3lxTE9CUmx1Y2JpOUhwSUN0WUJTcnEzb1VXRFBTdjR1bGdFQkptUllpa1F1SmNhWGdDTWpISmp3VE9lT2k2S1JuUUtKRWZENGJtNndBRURmaWdPM2tJTjEyYkVMbU5MOUlnd3FwUklaZllUdThLS0hrMzhJZGRiUGN1QWczdlUzdEV0aTF0NmFEYTNRNVBDbmphMEc1MU8tSlZ4T1p3Tk05Ul9lbmV6OUxDMWNQdTVCeUpQdw?oc=5",
+    "score": 70,
+    "pinned": false,
+    "added_at": "2026-09-29T06:03:45.822603+00:00"
+  },
+  {
+    "type": "flag",
+    "scope": "local",
+    "headline": "Harrisburg to cover license plate reader cameras with trash bags, take them offline",
+    "excerpt": "Harrisburg to cover license plate reader cameras with trash bags, take them offline&nbsp;&nbsp;K8 News | Jonesboro, Arkansas",
+    "source": "K8 News | Jonesboro, Arkansas",
+    "date": "Sep 2026",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdWJVVXVqc0hTR2Njb3E3VUFUMThYN2VOX2RqcDc2UkxCNjliRzkyRlF3QXU1ZmlQQ0RhMVlkQUJ4NkR1eUR3WVlOLWFFZHg4bURDVEp0TzEzYmw5dW1Db1VTSzExRTZ5eHJ1LUo4aFFIbUV0dGt6c2tfTjJmOHZfQVlkeXNKb04xY0ZxeWE3VnJfZXZTaWZwLUVycFZEczRHcXFHNFhpeEVibXNlQ3ROU1dfOA?oc=5",
+    "score": 70,
+    "pinned": false,
+    "added_at": "2026-09-29T06:03:45.842699+00:00"
+  },
+  {
+    "type": "flag",
+    "scope": "local",
+    "headline": "Documents Show AI Data-Harvesting Cameras Could Face \"Cancellation\" In Sherwood, Arkansas",
+    "excerpt": "Documents Show AI Data-Harvesting Cameras Could Face \"Cancellation\" In Sherwood, Arkansas&nbsp;&nbsp;Arkansas Radio",
+    "source": "Arkansas Radio",
+    "date": "Sep 2026",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOEotLTRpMjhtQ1hzczU0MFZiTjVGdXBLU1ZDT0JUV0hvdGpZRmdCaXI1SkVWSERacHQxS3JEaS1aaHlHSS1pdkozYjVNM3JmRlJpZzFfZzFwYW04UkhYTTNXQkJiM1RuS2VNR0dpOHhMTmZUU2dVemI1VHdKZzJHWWhPQ3FxVEFlcElxQmdSVWhqSnFzNU9j?oc=5",
+    "score": 70,
+    "pinned": false,
+    "added_at": "2026-09-29T06:03:46.214709+00:00"
+  },
+  {
+    "type": "flag",
+    "scope": "local",
+    "headline": "What are Flock cameras? How you can find them in Arkansas",
+    "excerpt": "What are Flock cameras? How you can find them in Arkansas&nbsp;&nbsp;KARK",
+    "source": "KARK",
+    "date": "Aug 2026",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQZmlyWmo4SjJKc29rYlZiTXJZaUlrempoQklrY0JVY2pCV2dIeDJKVWZyMk84OW9fUlVEZnc1NnE1MlVkZzcxY1NJMEZFSThZUHNJM0syem9GRmExYmRoeFpXbnlaeEVwaHl6cEFSMVAxeFp3eXB3cUQ0bzJuWEZaTVF4bjNiTXJOUUMyYkFTc0NlNGlGbmh0VGU5MDVFV2s?oc=5",
+    "score": 70,
+    "pinned": false,
+    "added_at": "2026-09-29T06:03:46.215247+00:00"
   }
 ]
