@@ -837,71 +837,101 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Monero Card -->
-          <div class="border border-emerald-500/40 bg-[#0c120f] p-6 flex flex-col justify-between relative overflow-hidden">
-            <div class="absolute top-2 right-2 bg-emerald-500/10 text-emerald-400 font-mono text-[9px] uppercase px-2 py-0.5 border border-emerald-500/20">
-              Recommended (Private)
-            </div>
-            <div>
-              <div class="flex items-center gap-2 mb-2">
-                <span class="font-mono text-sm font-bold text-neutral-100">Monero (XMR)</span>
-              </div>
-              <p class="text-neutral-400 text-xs mb-4">
-                Untraceable &amp; untracked. Recommended for donors seeking maximum financial confidentiality.
-              </p>
-              <div class="bg-black/60 p-3 border border-neutral-800 rounded font-mono text-xs text-neutral-300 break-all mb-4 select-all">
-                <span id="xmr-address" data-wallet="888tNkZrPN6JsEgekjMnABU4TBzc2Dt29EPAvkFxbANsAnJYPbb3iQ1YBRk1UXcdRsiKc9dhwMVgN5S9cQUiyoogDavup3H">888tNkZrPN...Davup3H</span>
-              </div>
-            </div>
-            <button
-              class="wallet-copy-btn btn-outline text-xs w-full justify-center"
-              data-target="xmr-address"
-            >
-              Copy Monero Address
-            </button>
+        <!-- Crypto Aggregator Container -->
+        <div class="crypto-aggregator-container">
+          <h3>Support Independent Surveillance Accountability</h3>
+          
+          <!-- Currency Navigation Tabs (Centered Flexbox for perfect symmetry) -->
+          <div class="crypto-tabs" role="tablist">
+            <button class="crypto-tab active" role="tab" aria-selected="true" data-target="xmr">Monero (XMR)</button>
+            <button class="crypto-tab" role="tab" aria-selected="false" data-target="btc">Bitcoin (BTC)</button>
+            <button class="crypto-tab" role="tab" aria-selected="false" data-target="eth">Ethereum (ETH)</button>
+            <button class="crypto-tab" role="tab" aria-selected="false" data-target="sol">Solana (SOL)</button>
+            <button class="crypto-tab" role="tab" aria-selected="false" data-target="doge">Dogecoin (DOGE)</button>
+            <button class="crypto-tab" role="tab" aria-selected="false" data-target="bch">Bitcoin Cash (BCH)</button>
+            <button class="crypto-tab" role="tab" aria-selected="false" data-target="ltc">Litecoin (LTC)</button>
           </div>
 
-          <!-- Bitcoin Card -->
-          <div class="border border-neutral-800 bg-[#0d0d10] p-6 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-2 mb-2">
-                <span class="font-mono text-sm font-bold text-neutral-100">Bitcoin (BTC)</span>
-              </div>
-              <p class="text-neutral-400 text-xs mb-4">
-                Native SegWit / Taproot contributions for public infrastructure support.
-              </p>
-              <div class="bg-black/60 p-3 border border-neutral-800 rounded font-mono text-xs text-neutral-300 break-all mb-4 select-all">
-                <span id="btc-address" data-wallet="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">bc1qxy2kgdy...3kkfjhx0wlh</span>
+          <!-- Wallet Panels -->
+          <div class="crypto-panels">
+            
+            <!-- Monero Panel -->
+            <div class="crypto-panel active" id="xmr" role="tabpanel">
+              <div class="crypto-info">
+                <span class="currency-label">Monero (XMR) Address</span>
+                <div class="address-box">
+                  <input type="text" readonly value="45tWGjwF7ddjnh4SoDMJFNSRHohC88LKu6FKFURQvFLWCCpkUWMa1eVfgoTTXRdgx2TMkpUoFhbRABm7Y2VSppqcEEiQX8j" id="addr-xmr">
+                  <button class="copy-btn" onclick="copyCryptoAddress('addr-xmr', this)">Copy</button>
+                </div>
               </div>
             </div>
-            <button
-              class="wallet-copy-btn btn-outline text-xs w-full justify-center"
-              data-target="btc-address"
-            >
-              Copy Bitcoin Address
-            </button>
-          </div>
 
-          <!-- Ethereum / USDC Card -->
-          <div class="border border-neutral-800 bg-[#0d0d10] p-6 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-2 mb-2">
-                <span class="font-mono text-sm font-bold text-neutral-100">Ethereum &amp; USDC</span>
-              </div>
-              <p class="text-neutral-400 text-xs mb-4">
-                ETH, USDC, or stablecoins on Ethereum &amp; Layer-2 networks (Arbitrum, Optimism).
-              </p>
-              <div class="bg-black/60 p-3 border border-neutral-800 rounded font-mono text-xs text-neutral-300 break-all mb-4 select-all">
-                <span id="eth-address" data-wallet="0x71C836643F373305a4b7325F37e1919864273E11">0x71C8366...64273E11</span>
+            <!-- Bitcoin Panel -->
+            <div class="crypto-panel" id="btc" role="tabpanel">
+              <div class="crypto-info">
+                <span class="currency-label">Bitcoin (BTC) Address</span>
+                <div class="address-box">
+                  <input type="text" readonly value="bc1q2c3qe1l8dgy8e7zqq6xxtrgmjjxh6rpx2hddxt" id="addr-btc">
+                  <button class="copy-btn" onclick="copyCryptoAddress('addr-btc', this)">Copy</button>
+                </div>
               </div>
             </div>
-            <button
-              class="wallet-copy-btn btn-outline text-xs w-full justify-center"
-              data-target="eth-address"
-            >
-              Copy ETH Address
-            </button>
+
+            <!-- Ethereum Panel -->
+            <div class="crypto-panel" id="eth" role="tabpanel">
+              <div class="crypto-info">
+                <span class="currency-label">Ethereum (ETH / ERC-20) Address</span>
+                <div class="address-box">
+                  <input type="text" readonly value="0x321f975844071B9fdA010E364086866FC8a28584" id="addr-eth">
+                  <button class="copy-btn" onclick="copyCryptoAddress('addr-eth', this)">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Solana Panel -->
+            <div class="crypto-panel" id="sol" role="tabpanel">
+              <div class="crypto-info">
+                <span class="currency-label">Solana (SOL) Address</span>
+                <div class="address-box">
+                  <input type="text" readonly value="HZvVRC5vs5LNsVmJF55D5PjihkiB9asBGAQsTBX1FifE" id="addr-sol">
+                  <button class="copy-btn" onclick="copyCryptoAddress('addr-sol', this)">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dogecoin Panel -->
+            <div class="crypto-panel" id="doge" role="tabpanel">
+              <div class="crypto-info">
+                <span class="currency-label">Dogecoin (DOGE) Address</span>
+                <div class="address-box">
+                  <input type="text" readonly value="DEQvAQapCHhMz9mR6QtCJtt9gUzC4eF1MA" id="addr-doge">
+                  <button class="copy-btn" onclick="copyCryptoAddress('addr-doge', this)">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bitcoin Cash Panel -->
+            <div class="crypto-panel" id="bch" role="tabpanel">
+              <div class="crypto-info">
+                <span class="currency-label">Bitcoin Cash (BCH) Address</span>
+                <div class="address-box">
+                  <input type="text" readonly value="qqdddn6d648v2n965ntwc9ghg354526jtgfh2m6yr4" id="addr-bch">
+                  <button class="copy-btn" onclick="copyCryptoAddress('addr-bch', this)">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Litecoin Panel -->
+            <div class="crypto-panel" id="ltc" role="tabpanel">
+              <div class="crypto-info">
+                <span class="currency-label">Litecoin (LTC) Address</span>
+                <div class="address-box">
+                  <input type="text" readonly value="ltc1qcpkrqjt68cvyk6t5xrcx3f7uktlawyu3v08jar" id="addr-ltc">
+                  <button class="copy-btn" onclick="copyCryptoAddress('addr-ltc', this)">Copy</button>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 

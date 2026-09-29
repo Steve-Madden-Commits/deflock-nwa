@@ -685,9 +685,72 @@
   }
 
   /* ──────────────────────────────────────────────────────────────────
-     7. CRYPTO WALLET COPY
+     7. CRYPTO WALLET COPY & AGGREGATOR
      ────────────────────────────────────────────────────────────────── */
+  window.copyCryptoAddress = function (elementId, btnElement) {
+    var input = document.getElementById(elementId);
+    if (!input) return;
+    input.select();
+    var val = input.value;
+
+    function handleSuccess() {
+      var orig = btnElement.textContent;
+      btnElement.textContent = 'Copied!';
+      btnElement.classList.add('success');
+      setTimeout(function () {
+        btnElement.textContent = orig;
+        btnElement.classList.remove('success');
+      }, 2000);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(val).then(handleSuccess).catch(function () {
+        fallbackCopyVal(val, handleSuccess);
+      });
+    } else {
+      fallbackCopyVal(val, handleSuccess);
+    }
+  };
+
+  function fallbackCopyVal(text, onSuccess) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      if (onSuccess) onSuccess();
+    } catch (err) {}
+    document.body.removeChild(ta);
+  }
+
+  function initCryptoAggregator() {
+    var tabs = document.querySelectorAll('.crypto-tab');
+    tabs.forEach(function (button) {
+      button.addEventListener('click', function () {
+        tabs.forEach(function (btn) {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.crypto-panel').forEach(function (panel) {
+          panel.classList.remove('active');
+        });
+
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        var targetId = button.getAttribute('data-target');
+        var target = document.getElementById(targetId);
+        if (target) {
+          target.classList.add('active');
+        }
+      });
+    });
+  }
+
   function initWalletCopy() {
+    initCryptoAggregator();
     var copyButtons = document.querySelectorAll('.wallet-copy-btn');
     copyButtons.forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -717,19 +780,11 @@
     });
 
     function fallbackCopy(text, btn) {
-      var ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand('copy');
+      fallbackCopyVal(text, function () {
         var orig = btn.textContent;
         btn.textContent = 'COPIED!';
         setTimeout(function () { btn.textContent = orig; }, 2000);
-      } catch (err) {}
-      document.body.removeChild(ta);
+      });
     }
   }
 
