@@ -188,38 +188,78 @@
          HERO
          =============================================================== -->
     <section class="scanline-bg relative border-b border-neutral-800">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative z-10">
-        <div class="max-w-2xl">
-          <div class="alert-badge mb-6">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28 relative z-10">
+
+        <!-- Badge -->
+        <div class="flex justify-center mb-6">
+          <div class="alert-badge">
             <span style="width:5px;height:5px;border-radius:50%;background:#ef4444;box-shadow:0 0 4px rgba(239,68,68,0.6);" aria-hidden="true"></span>
             SURVEILLANCE ALERT: NWA REGION
           </div>
+        </div>
 
-          <h1 class="font-mono text-3xl sm:text-4xl md:text-[2.75rem] font-bold tracking-tight leading-[1.15] text-neutral-100">
-            Automated Mass Surveillance<br>Across Northwest Arkansas.
-          </h1>
+        <!-- Headline -->
+        <h1 class="font-mono text-3xl sm:text-4xl md:text-[2.75rem] font-bold tracking-tight leading-[1.15] text-neutral-100 text-center">
+          Do you feel safe yet?
+        </h1>
 
-          <p class="mt-6 text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl">
-            Flock Safety's automated license plate recognition (ALPR) cameras silently photograph
-            and log every vehicle crossing through Fayetteville, Springdale, Rogers, Bentonville,
-            and surrounding municipalities, capturing your license plate, vehicle make, model, color,
-            and identifying features on every trip. No public referendum was held. No individualized
-            warrants are required. Washington County's Quorum Court voted to bar county funds
-            from ALPR systems, but municipal deployments continue to expand unchecked across
-            both counties.
-          </p>
+        <!-- Body -->
+        <p class="mt-6 text-neutral-400 text-[0.95rem] sm:text-base md:text-lg leading-relaxed text-left">
+          With automated license plate readers quietly proliferating across Northwest Arkansas,
+          our local intersections have become active nodes in an unchecked nationwide surveillance
+          dragnet. Over 40,000 cameras operating across 49 states log billions of vehicle sightings
+          monthly into centralized private databases, converting daily commutes, doctor visits, and
+          school drop-offs into searchable travel histories and pattern-of-life tracking on
+          law-abiding citizens. By outsourcing mass surveillance to private contractors like Flock
+          Safety, local municipalities bypass core Fourth Amendment protections to establish passive
+          checkpoints without judicial oversight, probable cause, or genuine public consent.
+          deflockNWA is an open-source, community-driven initiative to locate, map, and expose this
+          tracking infrastructure right here in our own backyard. Public roads must not serve as an
+          unmonitored mass-surveillance grid; we exist to bring complete transparency to our streets
+          and push back against unchecked surveillance overreach.
+        </p>
 
-          <div class="flex flex-wrap gap-3 mt-8">
-            <a href="#analysis" class="btn-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/></svg>
-              View The Dossier
+        <!-- Rhetorical sign-off -->
+        <div class="mt-7 border-l-2 border-neutral-700 pl-4 space-y-1">
+          <p class="font-mono text-sm text-neutral-400 italic tracking-wide">Do you know your rights?</p>
+          <p class="font-mono text-sm text-neutral-300 italic tracking-wide">Do you feel safe yet?</p>
+        </div>
+
+        <!-- Sources -->
+        <div class="mt-6 border-t border-neutral-800 pt-4 font-mono text-[0.62rem] text-neutral-600 tracking-wide space-y-1.5">
+          <div class="text-neutral-500 uppercase tracking-widest mb-2 text-[0.58rem]">Sources</div>
+          <div class="leading-snug">
+            <a href="https://en.wikipedia.org/wiki/Flock_Safety" target="_blank" rel="noopener noreferrer"
+               class="hover:text-neutral-400 transition-colors underline underline-offset-2 break-words">
+              Flock Safety — Wikipedia (Surveillance Network &amp; Fourth Amendment Challenges)
             </a>
-            <a href="#foia" class="btn-outline">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-              File A FOIA Request
+          </div>
+          <div class="leading-snug">
+            <a href="https://www.eff.org/deeplinks/2025/12/effs-investigations-expose-flock-safetys-surveillance-abuses-2025-review" target="_blank" rel="noopener noreferrer"
+               class="hover:text-neutral-400 transition-colors underline underline-offset-2 break-words">
+              Electronic Frontier Foundation (EFF) — Investigations Expose Flock Safety's Surveillance Abuses
+            </a>
+          </div>
+          <div class="leading-snug">
+            <a href="https://www.flocksafety.com/products/license-plate-readers" target="_blank" rel="noopener noreferrer"
+               class="hover:text-neutral-400 transition-colors underline underline-offset-2 break-words">
+              Flock Safety — License Plate Readers Product Overview (49 States &amp; Network Reach)
             </a>
           </div>
         </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-3 mt-8">
+          <a href="#analysis" class="btn-primary justify-center sm:justify-start">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/></svg>
+            View The Dossier
+          </a>
+          <a href="#foia" class="btn-outline justify-center sm:justify-start">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            File A FOIA Request
+          </a>
+        </div>
+
       </div>
     </section>
 
