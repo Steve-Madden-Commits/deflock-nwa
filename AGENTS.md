@@ -12,9 +12,9 @@ This document defines operational rules, security constraints, and architectural
 
 - **PII & Identifier Protection**:
   - **Never** hardcode personal names, personal email addresses, phone numbers, home addresses, or local OS paths (e.g., `C:\Users\...`).
-  - Maintain public contact endpoints using only project aliases (`deflocknwa@proton.me`, `news@deflocknwa.org`).
+  - Maintain public contact endpoints using only the project alias (`deflocknwa@proton.me`).
   - Keep FOIA generators populated solely with bracketed placeholders (`[YOUR NAME]`, `[YOUR EMAIL]`, `[YOUR MAILING ADDRESS]`).
-  - In git operations, always ensure author and committer emails use the GitHub anonymized no-reply proxy (`Steve-Madden-Commits@users.noreply.github.com`).
+  - In git operations, ensure author and committer emails use `deflocknwa@proton.me`.
 
 ---
 
