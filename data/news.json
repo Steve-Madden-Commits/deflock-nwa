@@ -205,6 +205,18 @@
   },
   {
     "type": "flag",
+    "scope": "local",
+    "headline": "Flock Camera Misread a License Plate and an Innocent Arkansas Couple Ended Up at Gunpoint",
+    "excerpt": "Flock Camera Misread a License Plate and an Innocent Arkansas Couple Ended Up at Gunpoint&nbsp;&nbsp;MotorBiscuit",
+    "source": "MotorBiscuit",
+    "date": "Aug 2026",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPMXJnMlhQX1A0M3RCNkVsdkNvMk5oSHFVTWc5dGw2dmdQTVNxb3R2R055S1A4c09OLXB4Q2EzeTRGMTllMHA3SUFhQUE2eF9kbnN2NjI3NWZLNElKYTFwZ2RCZEc4TmlMTThHS3RKVnpZVHFobldnQXBMSFpOeEludVF5UUxZOTVGeW9IMVpmakRrU3BjV25ZNWlGNFQ4V3MtV2g2b2JGVzA4Q3Z6MEI0YzVKZmdwTnJsa0JB?oc=5",
+    "score": 78,
+    "pinned": false,
+    "added_at": "2026-10-02T06:04:04.282077+00:00"
+  },
+  {
+    "type": "flag",
     "scope": "national",
     "headline": "ACLU Campaign: Flock's Network Tracks Where You Pray, Protest, and Seek Medical Care",
     "excerpt": "The ACLU's national campaign against ALPR 'creep' documents how Flock's vehicle-journey maps can reveal attendance at mosques, abortion providers, union halls, and political protests — with no warrant requirement at any point.",
@@ -236,17 +248,5 @@
     "score": 70,
     "pinned": false,
     "added_at": "2026-09-29T06:03:45.842699+00:00"
-  },
-  {
-    "type": "flag",
-    "scope": "local",
-    "headline": "Documents Show AI Data-Harvesting Cameras Could Face \"Cancellation\" In Sherwood, Arkansas",
-    "excerpt": "Documents Show AI Data-Harvesting Cameras Could Face \"Cancellation\" In Sherwood, Arkansas&nbsp;&nbsp;Arkansas Radio",
-    "source": "Arkansas Radio",
-    "date": "Sep 2026",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOEotLTRpMjhtQ1hzczU0MFZiTjVGdXBLU1ZDT0JUV0hvdGpZRmdCaXI1SkVWSERacHQxS3JEaS1aaHlHSS1pdkozYjVNM3JmRlJpZzFfZzFwYW04UkhYTTNXQkJiM1RuS2VNR0dpOHhMTmZUU2dVemI1VHdKZzJHWWhPQ3FxVEFlcElxQmdSVWhqSnFzNU9j?oc=5",
-    "score": 70,
-    "pinned": false,
-    "added_at": "2026-09-29T06:03:46.214709+00:00"
   }
 ]
