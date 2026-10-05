@@ -1,0 +1,13 @@
+# DEFLOCK NWA — Security Vulnerability Reporting
+# https://deflocknwa.org
+
+Contact: mailto:deflocknwa@proton.me
+Expires: 2027-10-05T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://deflocknwa.org/.well-known/security.txt
+Canonical: https://deflocknwa.org/security.txt
+
+# Policy & Scope:
+# DEFLOCK NWA is a 100% static, client-side, zero-telemetry civic privacy project.
+# We welcome responsible vulnerability disclosures regarding our site, data pipelines,
+# and hosting infrastructure. Please send detailed reproduction steps to our contact email.
