@@ -638,7 +638,9 @@
             <span id="news-status" class="text-muted sm:ml-auto" role="status" aria-live="polite">Pinned records</span>
           </div>
 
-          <ol id="news-list" class="divide-y divide-line border-b border-line" role="list" aria-label="Flock Safety news records">
+          <div id="news-box" class="relative border-b border-line">
+          <div id="news-viewport" class="overflow-hidden">
+          <ol id="news-list" class="divide-y divide-line" role="list" aria-label="Flock Safety news records">
             <li class="py-6">
               <p class="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-registry text-muted">
                 <span class="border border-accent px-2 text-accent">Win</span>
@@ -688,6 +690,10 @@
               <p class="mt-2 text-sm leading-body text-muted">The Farmington Police Department did not renew its Flock Safety contract after it expired August 10, 2026 - citing technical issues including false stolen-plate alerts and Flock cutting the department's data window from 30 days to just 7.</p>
             </li>
           </ol>
+          </div>
+          <div id="news-fade" class="pointer-events-none absolute inset-x-0 bottom-12 hidden h-16 bg-gradient-to-t from-[#09090b] to-transparent" aria-hidden="true"></div>
+          <button type="button" id="news-toggle" class="hidden h-12 w-full items-center justify-center gap-2 border-t border-line font-mono text-xs font-bold uppercase tracking-registry text-muted transition-colors hover:text-accent" aria-expanded="false" aria-controls="news-viewport"><span id="news-toggle-label">More</span> <span id="news-toggle-icon" class="inline-block transition-transform duration-150" aria-hidden="true">&darr;</span></button>
+          </div>
 
           <p class="mt-6 font-mono text-xs leading-body text-muted">
             Curated articles sourced from public records. Links open in a new tab. Know of a story we're missing?
@@ -747,6 +753,8 @@
             <p class="mt-6 text-base leading-body text-muted sm:text-lg">Each Flock Safety Falcon camera captures and transmits the following data to cloud storage accessible by subscribing law enforcement agencies, with no warrant, probable cause, or judicial oversight required for queries.</p>
           </header>
 
+          <div id="dossier-box" class="relative border-b border-line">
+          <div id="dossier-viewport" class="overflow-hidden">
           <h3 class="font-mono text-xs font-medium uppercase tracking-[0.16em] text-ink">Vehicle Capture Data Points</h3>
           <ol class="mt-4 border-t border-line" role="list">
             <li class="flex gap-6 border-b border-line py-6">
@@ -815,6 +823,10 @@
               <h4 class="text-lg font-semibold text-ink">Data Retention Without Consent</h4>
               <p class="mt-4 leading-body text-muted">The standard Flock Safety data retention window is 30 days, but agencies can negotiate longer retention periods. During this window, the complete travel history of every vehicle that passes a camera is searchable, regardless of whether the vehicle or its owner is under investigation.</p>
             </article>
+          </div>
+          </div>
+          <div id="dossier-fade" class="pointer-events-none absolute inset-x-0 bottom-12 hidden h-16 bg-gradient-to-t from-[#09090b] to-transparent" aria-hidden="true"></div>
+          <button type="button" id="dossier-toggle" class="hidden h-12 w-full items-center justify-center gap-2 border-t border-line font-mono text-xs font-bold uppercase tracking-registry text-muted transition-colors hover:text-accent" aria-expanded="false" aria-controls="dossier-viewport"><span id="dossier-toggle-label">More</span> <span id="dossier-toggle-icon" class="inline-block transition-transform duration-150" aria-hidden="true">&darr;</span></button>
           </div>
         </article>
       </div>
@@ -1447,6 +1459,81 @@
       }
 
       loadNews();
+
+      (function initNewsToggle() {
+        var viewport = document.getElementById('news-viewport');
+        var toggle = document.getElementById('news-toggle');
+        var fade = document.getElementById('news-fade');
+        var label = document.getElementById('news-toggle-label');
+        var icon = document.getElementById('news-toggle-icon');
+        if (!viewport || !toggle) {
+          return;
+        }
+        var expanded = false;
+        function collapsedHeight() {
+          return window.matchMedia('(min-width: 640px)').matches ? '21rem' : '24rem';
+        }
+        function apply() {
+          viewport.style.maxHeight = expanded ? 'none' : collapsedHeight();
+          viewport.style.transition = 'none';
+          toggle.setAttribute('aria-expanded', String(expanded));
+          label.textContent = expanded ? 'Less' : 'More';
+          icon.style.transform = expanded ? 'rotate(180deg)' : '';
+          fade.classList.toggle('hidden', expanded);
+        }
+        toggle.classList.remove('hidden');
+        toggle.classList.add('inline-flex');
+        apply();
+        toggle.addEventListener('click', function () {
+          expanded = !expanded;
+          apply();
+          if (!expanded) {
+            document.getElementById('news').scrollIntoView({ block: 'start' });
+          }
+        }, { signal: signal });
+        window.addEventListener('resize', function () {
+          if (!expanded) {
+            apply();
+          }
+        }, { signal: signal });
+      })();
+
+      (function initDossierToggle() {
+        var viewport = document.getElementById('dossier-viewport');
+        var toggle = document.getElementById('dossier-toggle');
+        var fade = document.getElementById('dossier-fade');
+        var label = document.getElementById('dossier-toggle-label');
+        var icon = document.getElementById('dossier-toggle-icon');
+        if (!viewport || !toggle) {
+          return;
+        }
+        var expanded = false;
+        function collapsedHeight() {
+          return window.matchMedia('(min-width: 640px)').matches ? '18rem' : '20rem';
+        }
+        function apply() {
+          viewport.style.maxHeight = expanded ? 'none' : collapsedHeight();
+          toggle.setAttribute('aria-expanded', String(expanded));
+          label.textContent = expanded ? 'Less' : 'More';
+          icon.style.transform = expanded ? 'rotate(180deg)' : '';
+          fade.classList.toggle('hidden', expanded);
+        }
+        toggle.classList.remove('hidden');
+        toggle.classList.add('inline-flex');
+        apply();
+        toggle.addEventListener('click', function () {
+          expanded = !expanded;
+          apply();
+          if (!expanded) {
+            document.getElementById('analysis').scrollIntoView({ block: 'start' });
+          }
+        }, { signal: signal });
+        window.addEventListener('resize', function () {
+          if (!expanded) {
+            apply();
+          }
+        }, { signal: signal });
+      })();
 
       window.addEventListener('pagehide', function () {
         controller.abort();
