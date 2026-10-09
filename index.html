@@ -515,6 +515,10 @@
       </ul>
 
       <div class="flex shrink-0 items-center gap-2">
+        <span class="hidden items-center gap-2 border border-accent/60 bg-accent/10 px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-registry text-accent sm:inline-flex lg:hidden xl:inline-flex">
+          <span class="h-1.5 w-1.5 animate-pulse bg-accent" aria-hidden="true"></span>
+          Merch Coming Soon
+        </span>
         <button id="theme-toggle" type="button" class="text-toggle flex h-12 items-center px-2 font-mono text-xs font-medium uppercase tracking-registry" aria-pressed="false" aria-label="Switch to light theme">
           <span aria-hidden="true" class="text-muted">[</span><span id="theme-toggle-label" class="px-1">Light</span><span aria-hidden="true" class="text-muted">]</span>
         </button>
@@ -535,12 +539,38 @@
         <li class="border-b border-line"><a href="#blog" data-nav-link class="drawer-link flex min-h-[48px] items-center gap-4 px-4 sm:px-8"><span class="drawer-index text-xs text-muted" aria-hidden="true">07</span>Blog</a></li>
         <li class="border-b border-line"><a href="#partners" data-nav-link class="drawer-link flex min-h-[48px] items-center gap-4 px-4 sm:px-8"><span class="drawer-index text-xs text-muted" aria-hidden="true">08</span>Partners in Freedom</a></li>
         <li class="border-b border-line"><a href="#donate" data-nav-link class="drawer-link flex min-h-[48px] items-center gap-4 px-4 text-accent sm:px-8"><span class="drawer-index text-xs text-muted" aria-hidden="true">09</span>Donate (Crypto)</a></li>
+        <li class="border-b border-line"><p class="flex min-h-[48px] items-center gap-4 px-4 text-accent sm:px-8"><span class="text-xs text-muted" aria-hidden="true">//</span>Merch Coming Soon</p></li>
         <li><a href="mailto:deflocknwa@proton.me" data-nav-link class="drawer-link flex min-h-[48px] flex-wrap items-center gap-x-4 px-4 py-2 sm:px-8"><span class="drawer-index text-xs text-muted" aria-hidden="true">10</span>Contact<span class="w-full pl-8 text-xs normal-case tracking-normal text-muted sm:w-auto sm:pl-0">deflocknwa@proton.me</span></a></li>
       </ul>
     </div>
   </header>
 
   <main id="main-content" tabindex="-1" class="pt-header outline-none">
+
+    <section id="alerts" class="relative overflow-hidden border-b border-accent/50 bg-accent/10" aria-labelledby="alerts-title" style="background-image: linear-gradient(90deg, rgb(var(--c-accent) / 0.18), rgb(var(--c-accent) / 0.04) 60%, transparent);">
+      <span class="absolute inset-y-0 left-0 w-1 bg-accent" aria-hidden="true"></span>
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <div class="lg:max-w-md">
+          <h2 id="alerts-title" class="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.16em] text-accent">
+            <span class="h-2 w-2 animate-pulse bg-accent" aria-hidden="true"></span>
+            Surveillance Alerts // Live Feed
+          </h2>
+          <p class="mt-2 text-sm leading-body text-ink">Get notified when new cameras are discovered, FOIA responses are published, or council votes are scheduled.</p>
+        </div>
+        <div class="lg:w-full lg:max-w-xl">
+          <form id="alert-form" action="https://buttondown.com/api/emails/embed-subscribe/DeFlockNWA" method="post" target="_blank" class="flex flex-col gap-2 sm:flex-row" novalidate>
+            <label for="alert-email" class="sr-only">Email address for surveillance alerts</label>
+            <input id="alert-email" type="email" name="email" required autocomplete="email" placeholder="Enter your email" aria-describedby="alert-feedback" class="h-12 flex-1 border border-accent/60 bg-base px-4 font-mono text-sm text-ink placeholder:text-muted focus:border-accent">
+            <button type="submit" class="h-12 whitespace-nowrap bg-accent px-6 font-mono text-sm font-bold uppercase tracking-registry text-accent-ink transition-colors duration-150 hover:bg-ink hover:text-[rgb(var(--c-base))]">Subscribe</button>
+          </form>
+          <div class="mt-2 flex flex-wrap items-center justify-between gap-2">
+            <p id="alert-feedback" class="font-mono text-xs" role="status" aria-live="polite"></p>
+            <a href="https://buttondown.com/refer/DeFlockNWA" target="_blank" rel="noopener noreferrer" class="ml-auto font-mono text-xs text-muted transition-colors hover:text-ink">Powered by Buttondown &nearr;<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="top" class="border-b border-line" aria-labelledby="hero-title">
       <div class="mx-auto max-w-6xl px-4 pb-16 pt-16 sm:px-8 sm:pb-24 sm:pt-24">
@@ -560,7 +590,7 @@
 
         <div class="mt-10 flex flex-col gap-4 sm:flex-row">
           <a id="cta-dossier" href="#analysis" class="group inline-flex h-12 items-center justify-center gap-4 bg-accent px-6 font-mono text-sm font-bold uppercase tracking-registry text-accent-ink transition-colors duration-150 hover:bg-ink hover:text-[rgb(var(--c-base))]">
-            View The Dossier
+            View the FACTS
             <span class="transition-transform duration-150 ease-snap group-hover:translate-x-2" aria-hidden="true">&rarr;</span>
           </a>
           <a id="cta-foia" href="#foia" class="group inline-flex h-12 items-center justify-center gap-4 border border-ink px-6 font-mono text-sm font-bold uppercase tracking-registry text-ink transition-colors duration-150 hover:border-accent hover:text-accent">
@@ -912,20 +942,6 @@
               <address class="mt-2 font-mono text-sm not-italic text-muted">280 N College Ave, Suite 300, Fayetteville, AR 72701</address>
               <p class="mt-2 text-sm leading-body text-muted">Voted to bar county funds from ALPR purchases. Attend to support enforcement.</p>
             </article>
-          </div>
-
-          <div class="mt-12 border border-line bg-surface p-6 sm:p-8">
-            <h3 class="font-mono text-xs font-medium uppercase tracking-[0.16em] text-ink">Surveillance Alerts</h3>
-            <p class="mt-2 text-sm leading-body text-muted">Get notified when new cameras are discovered, FOIA responses are published, or council votes are scheduled.</p>
-            <form id="alert-form" action="https://buttondown.com/api/emails/embed-subscribe/DeFlockNWA" method="post" target="_blank" class="mt-6 flex flex-col gap-2 sm:flex-row" novalidate>
-              <label for="alert-email" class="sr-only">Email address for surveillance alerts</label>
-              <input id="alert-email" type="email" name="email" required autocomplete="email" placeholder="Enter your email" aria-describedby="alert-feedback" class="h-12 flex-1 border border-line bg-base px-4 font-mono text-sm text-ink placeholder:text-muted focus:border-accent">
-              <button type="submit" class="h-12 whitespace-nowrap bg-accent px-6 font-mono text-sm font-bold uppercase tracking-registry text-accent-ink transition-colors duration-150 hover:bg-ink hover:text-[rgb(var(--c-base))]">Subscribe</button>
-            </form>
-            <div class="mt-4 flex flex-wrap items-center justify-between gap-2">
-              <p id="alert-feedback" class="font-mono text-xs" role="status" aria-live="polite"></p>
-              <a href="https://buttondown.com/refer/DeFlockNWA" target="_blank" rel="noopener noreferrer" class="ml-auto font-mono text-xs text-muted transition-colors hover:text-ink">Powered by Buttondown &nearr;<span class="sr-only"> (opens in a new tab)</span></a>
-            </div>
           </div>
         </div>
       </div>
