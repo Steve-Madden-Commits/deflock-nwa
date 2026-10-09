@@ -133,6 +133,30 @@
   },
   {
     "type": "flag",
+    "scope": "local",
+    "headline": "Arkansas father arrested for decade-long rape, sexual abuse of daughter since she was 12",
+    "excerpt": "Arkansas father arrested for decade-long rape, sexual abuse of daughter since she was 12&nbsp;&nbsp;KEYE",
+    "source": "KEYE",
+    "date": "Jul 2023",
+    "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQMWxDY2xVZ0lFZDZpOEtPNjFOQnAtUWlvdTh4cmpxSnJiRVZkS2VuZnJaU1RRLXIzWENQMEdMa0hmODNpMy1qTzRacE9GVTNHYmE2TjktT0RzVVJhclR5OXBYVnVUdi0zQ2ZlRkZITmRuZ2ExUFkyR1pJYkc5UWtPbjNRSm5lZldXQ1N3ajlobGhMRTY3VUxYUnFXeGwxQmlTRGEwYnI2WGpELV8xN1lHdzNBOEFxZHp3UXdHUHdaWGpYR2ZORDZLVTZmYS1iSUMzWklFSmgtZU4wV0E0N0tkNFpkNTZoZTRtU3VkeUJ3cHYxcW9QMGRuQnBNSGJWQ1VoSDBMUzhR?oc=5",
+    "score": 86,
+    "pinned": false,
+    "added_at": "2026-10-08T06:05:41.504873+00:00"
+  },
+  {
+    "type": "flag",
+    "scope": "local",
+    "headline": "Former Arkansas Children's employee arrested for internet stalking of a minor",
+    "excerpt": "Former Arkansas Children's employee arrested for internet stalking of a minor&nbsp;&nbsp;KATV",
+    "source": "KATV",
+    "date": "Oct 2017",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYlZoNmJJN2hsSEVra053Mmk1NHI4WTFubnczRk5YTVJEMzJwWHF0OTBuQlluZmo5aXhTQVA1ZGlhN2dqampTNkFzRUdRSEw4VE9pTmdRMzlxcC1Uek1SM2Y0X3ZzM0JzcjQ0em9NcjBydDFpOU9yOWdnTUsyak5mTUFGNHpJeFA5SGFwSS15bXc4N0o0bXZvWFpvd1RyTWd3bVp6UGd4cw?oc=5",
+    "score": 86,
+    "pinned": false,
+    "added_at": "2026-10-08T06:05:41.508620+00:00"
+  },
+  {
+    "type": "flag",
     "scope": "national",
     "headline": "Five Albany, Georgia Officers Fired and Arrested for Using Flock for Personal Surveillance",
     "excerpt": "A Flock Safety internal audit revealed five Albany PD officers had used the ALPR system for non-law enforcement purposes. All five were terminated and arrested; the Georgia Bureau of Investigation took over the cases.",
@@ -241,36 +265,14 @@
   },
   {
     "type": "flag",
-    "scope": "national",
-    "headline": "ACLU Campaign: Flock's Network Tracks Where You Pray, Protest, and Seek Medical Care",
-    "excerpt": "The ACLU's national campaign against ALPR 'creep' documents how Flock's vehicle-journey maps can reveal attendance at mosques, abortion providers, union halls, and political protests — with no warrant requirement at any point.",
-    "source": "ACLU",
-    "date": "2025–2026",
-    "url": "https://www.aclu.org/fighting-creepy-alpr-cameras",
-    "score": 75
-  },
-  {
-    "type": "flag",
     "scope": "local",
-    "headline": "Harrisburg covers license plate readers as council weighs their future",
-    "excerpt": "Harrisburg covers license plate readers as council weighs their future&nbsp;&nbsp;K8 News | Jonesboro, Arkansas",
-    "source": "K8 News | Jonesboro, Arkansas",
-    "date": "Sep 2026",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNOWt1aUd1LXFySkxiS3FBQ1BERGFGUUdBd09heERjZnJlbDJCRU1HbnRJQkhlWjgyNXAwcFdoUDI2elFlcFRfWkgxREFZMEM1ZG5Fc0gyUWNHcWFuS3lTOElRbmVpdGctOElEd21idWJiMldsdEFFMVJwVzJqdXpoaWcyV3I4QVdyZldhUkhxZDlRQW9OZGh6cUVVMzdrRFRDOHlF0gG3AUFVX3lxTE9CUmx1Y2JpOUhwSUN0WUJTcnEzb1VXRFBTdjR1bGdFQkptUllpa1F1SmNhWGdDTWpISmp3VE9lT2k2S1JuUUtKRWZENGJtNndBRURmaWdPM2tJTjEyYkVMbU5MOUlnd3FwUklaZllUdThLS0hrMzhJZGRiUGN1QWczdlUzdEV0aTF0NmFEYTNRNVBDbmphMEc1MU8tSlZ4T1p3Tk05Ul9lbmV6OUxDMWNQdTVCeUpQdw?oc=5",
-    "score": 70,
+    "headline": "Arkansas man arrested for aggravated robbery at gas station",
+    "excerpt": "Arkansas man arrested for aggravated robbery at gas station&nbsp;&nbsp;KATV",
+    "source": "KATV",
+    "date": "Mar 2021",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOS1cwWHhnV3hxMUE2d2xLYjhSV1RVc3FkN1dqZVRvaDNGWExlMFRLMWxjcDRWeTVyVVBWRTdUMnJpdDI1enJoWll0UF9SOGZEeV8yR2ppQlhpVDRubjJnX2NDd1FXd094Q0JfLW1ndmFXZzc4N0x4NThFY3ItTVFncW9waDVyWEw2S3A5SA?oc=5",
+    "score": 78,
     "pinned": false,
-    "added_at": "2026-09-29T06:03:45.822603+00:00"
-  },
-  {
-    "type": "flag",
-    "scope": "local",
-    "headline": "Harrisburg to cover license plate reader cameras with trash bags, take them offline",
-    "excerpt": "Harrisburg to cover license plate reader cameras with trash bags, take them offline&nbsp;&nbsp;K8 News | Jonesboro, Arkansas",
-    "source": "K8 News | Jonesboro, Arkansas",
-    "date": "Sep 2026",
-    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdWJVVXVqc0hTR2Njb3E3VUFUMThYN2VOX2RqcDc2UkxCNjliRzkyRlF3QXU1ZmlQQ0RhMVlkQUJ4NkR1eUR3WVlOLWFFZHg4bURDVEp0TzEzYmw5dW1Db1VTSzExRTZ5eHJ1LUo4aFFIbUV0dGt6c2tfTjJmOHZfQVlkeXNKb04xY0ZxeWE3VnJfZXZTaWZwLUVycFZEczRHcXFHNFhpeEVibXNlQ3ROU1dfOA?oc=5",
-    "score": 70,
-    "pinned": false,
-    "added_at": "2026-09-29T06:03:45.842699+00:00"
+    "added_at": "2026-10-09T06:06:11.716838+00:00"
   }
 ]
