@@ -265,12 +265,14 @@
   },
   {
     "type": "flag",
-    "scope": "national",
-    "headline": "ACLU Campaign: Flock's Network Tracks Where You Pray, Protest, and Seek Medical Care",
-    "excerpt": "The ACLU's national campaign against ALPR 'creep' documents how Flock's vehicle-journey maps can reveal attendance at mosques, abortion providers, union halls, and political protests — with no warrant requirement at any point.",
-    "source": "ACLU",
-    "date": "2025–2026",
-    "url": "https://www.aclu.org/fighting-creepy-alpr-cameras",
-    "score": 75
+    "scope": "local",
+    "headline": "Arkansas man arrested for aggravated robbery at gas station",
+    "excerpt": "Arkansas man arrested for aggravated robbery at gas station&nbsp;&nbsp;KATV",
+    "source": "KATV",
+    "date": "Mar 2021",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOS1cwWHhnV3hxMUE2d2xLYjhSV1RVc3FkN1dqZVRvaDNGWExlMFRLMWxjcDRWeTVyVVBWRTdUMnJpdDI1enJoWll0UF9SOGZEeV8yR2ppQlhpVDRubjJnX2NDd1FXd094Q0JfLW1ndmFXZzc4N0x4NThFY3ItTVFncW9waDVyWEw2S3A5SA?oc=5",
+    "score": 78,
+    "pinned": false,
+    "added_at": "2026-10-09T06:06:11.716838+00:00"
   }
 ]
