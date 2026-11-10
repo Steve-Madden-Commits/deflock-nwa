@@ -847,9 +847,27 @@
   }
 
   /* ──────────────────────────────────────────────────────────────────
+     ABUSE CASE COUNTER (data/stats.json, refreshed nightly)
+     ────────────────────────────────────────────────────────────────── */
+  function initAbuseCount() {
+    var el = document.getElementById('ij-abuse-count');
+    if (!el) return;
+    fetch('data/stats.json', { cache: 'no-cache' })
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
+      .then(function (stats) {
+        var n = Number(stats && stats.abuse_cases);
+        if (isFinite(n) && n > 0) el.textContent = String(Math.round(n));
+      })
+      .catch(function () {
+        // Keep the static fallback figure silently
+      });
+  }
+
+  /* ──────────────────────────────────────────────────────────────────
      INIT
      ────────────────────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
+    initAbuseCount();
     initMap();
     initSmoothScroll();
     initFoia();

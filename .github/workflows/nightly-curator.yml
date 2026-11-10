@@ -5,6 +5,11 @@ on:
     # Runs every morning at 06:00 UTC (1:00 AM CST)
     - cron: '0 6 * * *'
   workflow_dispatch: # Allows manual one-click trigger from GitHub Actions UI
+    inputs:
+      abuse_cases:
+        description: 'Optional manual override for the IJ abuse case count'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -23,13 +28,15 @@ jobs:
           python-version: '3.11'
 
       - name: Run News Ingestion & Importance Scorer
+        env:
+          ABUSE_CASES: ${{ github.event.inputs.abuse_cases }}
         run: python scripts/curate_news.py
 
       - name: Commit and Push if Updated
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "deflocknwa@proton.me"
-          git add data/news.json
+          git add data/news.json data/stats.json
           if ! git diff --cached --quiet; then
             git commit -m "[Automated] Nightly news & intelligence sync [skip ci]"
             git push

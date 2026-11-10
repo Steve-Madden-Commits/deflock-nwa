@@ -15,6 +15,14 @@ from datetime import datetime, timezone
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'news.json')
 
+STATS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'stats.json')
+IJ_DATABASE_URL = 'https://ij.org/the-ij-database-of-alpr-abuse/'
+ABUSE_COUNT_PATTERNS = [
+    r'([\d,]{2,6})\s+(?:documented|confirmed|known)?\s*(?:cases|incidents|entries)\s+of\s+(?:ALPR|license\s+plate)',
+    r'(?:cases|incidents|entries)\s*[:\-]\s*([\d,]{2,6})',
+    r'showing\s+\d+\s+(?:to|-)\s+\d+\s+of\s+([\d,]{2,6})',
+]
+
 RSS_FEEDS = [
     'https://news.google.com/rss/search?q=Flock+Safety+license+plate&hl=en-US&gl=US&ceid=US:en',
     'https://news.google.com/rss/search?q=ALPR+surveillance+Arkansas&hl=en-US&gl=US&ceid=US:en',
@@ -106,7 +114,73 @@ def clean_source(title):
 def normalize_title(title):
     return re.sub(r'[^a-z0-9]', '', title.lower())
 
+def load_stats():
+    if os.path.exists(STATS_PATH):
+        try:
+            with open(STATS_PATH, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                if isinstance(data, dict):
+                    return data
+        except Exception as e:
+            print(f"Error loading {STATS_PATH}: {e}")
+    return {}
+
+def fetch_abuse_count():
+    """Scrape the IJ ALPR abuse database case count. Returns int or None.
+    Does not attempt to bypass bot protection; returns None if blocked."""
+    req = urllib.request.Request(
+        IJ_DATABASE_URL,
+        headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            html = resp.read().decode('utf-8', errors='replace')
+    except Exception as e:
+        print(f"Could not fetch IJ database page: {e}")
+        return None
+
+    for pattern in ABUSE_COUNT_PATTERNS:
+        m = re.search(pattern, html, re.IGNORECASE)
+        if m:
+            return int(m.group(1).replace(',', ''))
+    print("IJ database page fetched but no case count found.")
+    return None
+
+def update_stats():
+    """Refresh data/stats.json. Manual override: ABUSE_CASES env var."""
+    stats = load_stats()
+    current = stats.get('abuse_cases')
+
+    count = None
+    override = os.environ.get('ABUSE_CASES', '').strip()
+    if override:
+        if override.isdigit() and int(override) > 0:
+            count = int(override)
+        else:
+            print(f"Ignoring invalid ABUSE_CASES override: {override!r}")
+    if count is None:
+        count = fetch_abuse_count()
+
+    # Sanity bounds: count must be positive and not drop sharply (parse error guard)
+    if count is None or count <= 0 or (isinstance(current, int) and count < current * 0.8):
+        print(f"Abuse case count unchanged ({current}).")
+        return
+
+    if count == current:
+        print(f"Abuse case count unchanged ({current}).")
+        return
+
+    stats['abuse_cases'] = count
+    stats['source'] = IJ_DATABASE_URL
+    stats['updated_at'] = datetime.now(timezone.utc).isoformat()
+    os.makedirs(os.path.dirname(STATS_PATH), exist_ok=True)
+    with open(STATS_PATH, 'w', encoding='utf-8') as f:
+        json.dump(stats, f, indent=2, ensure_ascii=False)
+        f.write('\n')
+    print(f"Abuse case count updated: {current} -> {count}")
+
 def run():
+    update_stats()
     existing = load_existing()
     existing_titles = {normalize_title(a.get('headline', '')): a for a in existing}
     existing_urls = {a.get('url', ''): a for a in existing}
